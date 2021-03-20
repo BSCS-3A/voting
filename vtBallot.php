@@ -26,8 +26,6 @@
                <?php
                     require 'php/connect.php';
                     require 'php/vtFetch.php';
-                    // require 'php/vtConfirm.php';
-                    // require 'php/vtSubmit.php';
                 ?>
                 <a href="#">
                     <div id="vote-button"><button class="btn" >SUBMIT</button></div>
@@ -37,14 +35,12 @@
      </main>
      <br>
 
-    <footer>
-        <div class="footer">
-        <p>BS COMPUTER SCIENCE 3A © 2021</p>
-        </div>
-    </footer>
     <?php
+        include 'html/footer.html';
         require 'php/vtPreview.php';
         require 'php/vtReceipt.php';
+        require 'php/vtConfirm.php';
+        // require 'php/vtSubmit.php';
     ?>
 </body>
 
