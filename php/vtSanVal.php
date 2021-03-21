@@ -1,12 +1,12 @@
 <?php
-    function validate(){
-        // return true if vote is valid, false if not
-        return (isValidCandidate() && isValidTime() && isLegitUser() && isNotRepeated());
-    }
-    
     function sanitize(){
         // convert values to acceptable data types
         return 1;
+    }
+
+    function validate(){
+        // return true if vote is valid, false if not
+        return (isValidCandidate() && isValidTime() && isValidUser() && isNotRepeated());
     }
 
     function isValidCandidate(){
@@ -16,6 +16,7 @@
             // 	while($j<)
             // 	if($candidates[$i][])
             // }
+        return true;
     }
 
     function isValidTime(){
@@ -25,20 +26,23 @@
         $date_en = new DateTime("2021-03-30 16:00:00");     // end sched date
 
         // Compare the dates 
-        if ($date_pr > $date_st && $date_pr < $date_en) {
-            echo $date1->format("Y-m-d") . " is later than " . $date2->format("Y-m-d"); 
-        }
-        else{
-            echo $date1->format("Y-m-d") . " is older than " . $date2->format("Y-m-d"); 
-        }
+        // if ($date_pr > $date_st && $date_pr < $date_en) {
+        //     echo $date1->format("Y-m-d") . " is later than " . $date2->format("Y-m-d"); 
+        // }
+        // else{
+        //     echo $date1->format("Y-m-d") . " is older than " . $date2->format("Y-m-d"); 
+            return true;
+        // }
     }
 
     function isValidUser(){
         // checks if user is registered
+        return true;
     }
 
     function isNotRepeated(){
         // checks if voter has voted already
+        return true;
     }
 
     function slugify($string){
