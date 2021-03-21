@@ -57,8 +57,8 @@
             <p>Your votes will be submitted. Are you sure?</p>
         </div>
         <div class="F-modal-footer">
-            <button type="button" class="F-returnBTN"><span>Return to Voting</span></button>
-            <button type="button" class="F-confirmBTN"><span>Confirm Submission</span></button>
+            <button type="button" id="return-button" class="F-returnBTN"><span>Return to Voting</span></button>
+            <button type="button" id="confirm-button" class="F-confirmBTN"><span>Confirm Submission</span></button>
         </div>
       </div>
     </div>
@@ -72,7 +72,7 @@
       var confirmBtn = document.getElementById("vote-button");                   //submit button from Voting page(Rica)
 
       // Get the <span> element that closes the modal
-      var cancelBtn = document.getElementsByClassName("F-returnBTN")[0];
+      var cancelBtn = document.getElementById("return-button")[0];
 
       // When the user clicks the button, open the modal 
       confirmBtn.onclick = function() {
