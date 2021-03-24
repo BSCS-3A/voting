@@ -37,11 +37,11 @@
      <br>
 
     <?php
-    echo "Validate = ".validate();
+    // echo "Validate = ".validate();
         include 'html/footer.html';
         require 'php/vtPreview.php';
         require 'php/vtReceipt.php';
-        require 'php/vtConfirm.php';
+        // require 'php/vtConfirm.php';
         // require 'php/vtSubmit.php';
     ?>
 </body>
