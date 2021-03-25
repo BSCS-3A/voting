@@ -16,7 +16,7 @@
 <body>
     <?php
         include 'html/navbar.html';
-        require 'php/vtSanVal.php';
+        // require 'php/vtSanVal.php';
     ?>
 
     <header id="F-header" style="text-align:center"><b>STUDENT LEADER ELECTION</b></header><br>
