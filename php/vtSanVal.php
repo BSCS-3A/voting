@@ -37,6 +37,7 @@
 
     function isValidUser(){
         // checks if user is registered
+        // add this function during construction; after added to mainline
         return true;
     }
 
