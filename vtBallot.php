@@ -15,8 +15,10 @@
 
 <body>
     <?php
+        require 'php/vtSanVal.php';
         include 'html/navbar.html';
-        // require 'php/vtSanVal.php';
+        require 'php/connect.php';
+        require 'php/vtFetch.php';
     ?>
 
     <header id="F-header" style="text-align:center"><b>STUDENT LEADER ELECTION</b></header><br>
@@ -25,8 +27,7 @@
         <!--Candidates-->
         <div id="voting-page">
                <?php
-                    require 'php/connect.php';
-                    require 'php/vtFetch.php';
+                    generateBallot($positions);
                 ?>
                 <a href="#">
                     <div id="vote-button"><button class="btn" >SUBMIT</button></div>
