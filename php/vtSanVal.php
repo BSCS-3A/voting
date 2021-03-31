@@ -1,7 +1,12 @@
 <?php
-    function sanitize(){
+    function sanitize($data){
         // convert values to acceptable data types
-        return 1;
+        $data = trim($data);
+        $data = stripslashes($data);
+        $data = htmlspecialchars($data);
+        if(is_int($data)){
+            return $data;
+        }
     }
 
     function validate(){
