@@ -9,7 +9,7 @@ body {
   z-index: 1; /* Sit on top */
   padding-top: 100px; /* Location of the box */
   left: 0;
-  top: 0;
+  top: 80px;
   width: 100%; /* Full width */
   height: 100%; /* Full height */
   overflow: auto; /* Enable scroll if needed */
@@ -63,21 +63,13 @@ body {
   font-size: 16px;
 }
 
-.F-modal-body-button {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 20px;
-  border-color: inherit;
-
-}
-
-.F-modal-footer {
+.F-modal-button {
   padding: 2px 16px;
   background-color: white;
  
 }
 
-.F-modal-footer button {
+.F-modal-button button {
   margin-bottom: 15px;
   margin-top: 15px;
 }
@@ -189,12 +181,12 @@ body {
 
 /* Go to Home Button */
 .F-goToHomeBTN {
-  float: right;
+  float: left;
   background-color: #eeeeee;
   color: black;
   margin-left: 10px;
-  height: 30px;
-  width: 150px;
+  height: 50px;
+  width: 140px;
   font-size: 14px;
   border-radius: 30px;
   letter-spacing: 1px;
@@ -203,7 +195,7 @@ body {
 
 /* Download Receipt Button */
 .F-downloadReceiptBTN {
-  float: middle;
+  float: right;
   background-color: #ffc423;
   color: black;
   margin-right: 10px;
@@ -213,4 +205,21 @@ body {
   border-radius: 4px;
   cursor: pointer;
 
+}
+
+@media (max-width: 1200px){
+  .F-modal{
+    top: 50px;
+  }
+  .F-returnBTN {
+    margin-left: 95px;
+  }
+  .F-confirmBTN {
+    margin-right: 85px;
+  }
+  .F-modal-content {
+    position: relative;
+    overflow: auto;
+  }
+  
 }

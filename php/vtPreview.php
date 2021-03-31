@@ -56,7 +56,7 @@
             <br>
             <p>Your votes will be submitted. Are you sure?</p>
         </div>
-        <div class="F-modal-footer">
+        <div class="F-modal-button">
             <button type="button" id="return-button" class="F-returnBTN"><span>Return to Voting</span></button>
             <button type="button" id="confirm-button" class="F-confirmBTN"><span>Confirm Submission</span></button>
         </div>

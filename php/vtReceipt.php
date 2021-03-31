@@ -19,11 +19,9 @@
           </div>
           <div class="F-modal-body">
             <p>Your vote has been successfully casted. Here's the copy of your votes.</p>
-            <div class="F-modal-body-button">
-              <button type="button" id="receipt-button" class="F-downloadReceiptBTN">Download Receipt</button>
-            </div>
           </div>
-          <div class="F-modal-footer">
+          <div class="F-modal-button">
+            <button type="button" id="receipt-button" class="F-downloadReceiptBTN">Download Receipt</button>
             <button type="button" id="gotoHome-button" class="F-goToHomeBTN">Go to Home</button>
           </div>
         </div>
