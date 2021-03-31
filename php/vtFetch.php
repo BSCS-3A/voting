@@ -6,7 +6,7 @@
             // insert position div here
             $cand = $poss["heirarchy_id"];
             if($heir_id != $cand){
-                $heir_id++;
+                $heir_id = $cand;
                 echo'    </div>';
                 echo' <div id="F-container">';
                 echo '<a href="#" id="F-position" style="float: left;">'.$poss["position_name"].'</a><hr>';
@@ -37,7 +37,7 @@
                         echo '<div class="candidate-box" >';
                         echo '<div>
                                        <label class="checkbox">
-                                           <input type="radio" name="'.$poss["position_name"].'" id="vote">
+                                           <input type="radio" name="'.$poss["heirarchy_id"].'" id="vote">
                                            <span class="checkmark"></span>
                                                    <a href="#"><img src="#" class="candidate-photo" style="float: left; width: 100px; height: 100px;" alt="Candidate" ></a>
                                                    <div class="candidate-info">';
