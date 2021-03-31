@@ -1,12 +1,42 @@
 <?php
-    function sanitize($data){
-        // convert values to acceptable data types
+    // convert values to acceptable data types
+    function fixDataType($data){
         $data = trim($data);
         $data = stripslashes($data);
         $data = htmlspecialchars($data);
         if(is_int($data)){
             return $data;
         }
+    }
+
+    // remove malicious bits
+    function cleanInput($input) {
+        $search = array(
+            '@<script[^>]*?>.*?</script>@si',   // Strip out javascript
+            '@<[\/\!]*?[^<>]*?>@si',            // Strip out HTML tags
+            '@<style[^>]*?>.*?</style>@siU',    // Strip style tags properly
+            '@<![\s\S]*?--[ \t\n\r]*>@'         // Strip multi-line comments
+        );
+    
+        $output = preg_replace($search, '', $input);
+        return $output;
+    }
+
+    // Uses the function above, as well as adds slashes as to not screw up database functions.
+    function sanitize($input) {
+        if (is_array($input)) {
+            foreach($input as $var=>$val) {
+                $output[$var] = sanitize($val);
+            }
+        }
+        else {
+            if (get_magic_quotes_gpc()) {
+                $input = stripslashes($input);
+            }
+            $input  = cleanInput($input);
+            $output = mysql_real_escape_string($input);
+        }
+        return $output;
     }
 
     function validate(){
