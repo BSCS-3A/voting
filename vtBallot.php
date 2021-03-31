@@ -16,6 +16,8 @@
 <body>
     <?php
         require 'php/vtSanVal.php';
+        // insert ajax here (jquery)
+        // for automatic time based access control
         include 'html/navbar.html';
         require 'php/connect.php';
         require 'php/vtFetch.php';
