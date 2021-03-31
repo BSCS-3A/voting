@@ -16,7 +16,7 @@
                         echo '<div class="candidate-box" >';
                         echo '<div>
                                        <label class="checkbox">
-                                           <input type="radio" name="'.$poss["heirarchy_id"].'" id="vote">
+                                           <input type="radio" name="'.$poss["heirarchy_id"].'" id="vote" value="'.$poss["candidate_id"].'">
                                            <span class="checkmark"></span>
                                                    <a href="#"><img src="#" class="candidate-photo" style="float: left; width: 100px; height: 100px;" alt="Candidate" ></a>
                                                    <div class="candidate-info">';
@@ -37,7 +37,7 @@
                         echo '<div class="candidate-box" >';
                         echo '<div>
                                        <label class="checkbox">
-                                           <input type="radio" name="'.$poss["heirarchy_id"].'" id="vote">
+                                           <input type="radio" name="'.$poss["heirarchy_id"].'" id="vote" value="'.$poss["candidate_id"].'">
                                            <span class="checkmark"></span>
                                                    <a href="#"><img src="#" class="candidate-photo" style="float: left; width: 100px; height: 100px;" alt="Candidate" ></a>
                                                    <div class="candidate-info">';
