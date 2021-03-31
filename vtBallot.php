@@ -25,15 +25,17 @@
 
     <main>
         <!--Candidates-->
+        <!-- <form method="POST" action = "<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" class="vtBallot" id="vtBallot"> -->
         <div id="voting-page">
                <?php
                     generateBallot($positions);
                 ?>
-                <a href="#">
-                    <div id="vote-button"><button class="btn" >SUBMIT</button></div>
-                </a>
+                <!-- <a href="#"> -->
+                    <div id="vote-button"><button name = "vote-button" class="btn" >SUBMIT</button></div>
+                <!-- </a> -->
 
         </div>
+        <!-- </form> -->
      </main>
      <br>
 

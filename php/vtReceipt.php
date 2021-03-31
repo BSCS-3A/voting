@@ -36,7 +36,7 @@
 
       // Get the button that opens the modal
       // var btn = document.getElementById("confirm");
-      var confirmBtn = document.getElementById("confirm-button")[0];
+      var confirmBtn = document.getElementById("confirm-button");
 
       // Get the <span> element that closes the modal
       //var span = document.getElementsByClassName("close")[0];

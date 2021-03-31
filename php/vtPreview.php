@@ -72,9 +72,9 @@
       var confirmBtn = document.getElementById("vote-button");                   //submit button from Voting page(Rica)
 
       // Get the <span> element that closes the modal
-      var cancelBtn = document.getElementById("return-button")[0];
+      var cancelBtn = document.getElementById("return-button");
 
-      // When the user clicks the button, open the modal 
+      // When the user clicks the submit button, open the modal 
       confirmBtn.onclick = function() {
       confirmModal.style.display = "block";
       }
