@@ -3,10 +3,10 @@
         $heir_id = 0;
         echo'    <div>';
         while($poss = $positions->fetch_assoc()){   // loop through all positions
-            // insert position div here
             $cand = $poss["heirarchy_id"];
             if($heir_id != $cand){
                 $heir_id = $cand;
+                // insert position div here
                 echo'    </div>';
                 echo' <div id="F-container">';
                 echo '<a href="#" id="F-position" style="float: left;">'.$poss["position_name"].'</a><hr>';
