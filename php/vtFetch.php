@@ -3,9 +3,8 @@
         $heir_id = 0;
         echo'    <div>';
         while($poss = $positions->fetch_assoc()){   // loop through all positions
-            $cand = $poss["heirarchy_id"];
-            if($heir_id != $cand){
-                $heir_id = $cand;
+            if($heir_id != $poss["heirarchy_id"]){
+                $heir_id = $poss["heirarchy_id"];
                 // insert position div here
                 echo'    </div>';
                 echo' <div id="F-container">';
