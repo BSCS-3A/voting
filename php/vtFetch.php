@@ -17,7 +17,7 @@
                                        <label class="checkbox">
                                            <input type="radio" name="'.$poss["heirarchy_id"].'" id="vote" value="'.$poss["candidate_id"].'">
                                            <span class="checkmark"></span>
-                                                   <a href="#"><img src="#" class="candidate-photo" style="float: left; width: 100px; height: 100px;" alt="' . $poss["fname"]. " " . $poss["lname"]  . '" ></a>
+                                                   <a href="#"><img src="/img/admin.png" class="candidate-photo" style="float: left; width: 100px; height: 100px;" alt="' . $poss["fname"]. " " . $poss["lname"]  . '" ></a>
                                                    <div class="candidate-info">';
                 
                         // display candidate
@@ -38,7 +38,7 @@
                                        <label class="checkbox">
                                            <input type="radio" name="'.$poss["heirarchy_id"].'" id="vote" value="'.$poss["candidate_id"].'">
                                            <span class="checkmark"></span>
-                                                   <a href="#"><img src="#" class="candidate-photo" style="float: left; width: 100px; height: 100px;" alt="' . $poss["fname"]. " " . $poss["lname"]  . '" ></a>
+                                                   <a href="#"><img src="/img/admin.png" class="candidate-photo" style="float: left; width: 100px; height: 100px;" alt="' . $poss["fname"]. " " . $poss["lname"]  . '" ></a>
                                                    <div class="candidate-info">';
                 
                         // display candidate
