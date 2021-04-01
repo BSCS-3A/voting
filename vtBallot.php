@@ -42,7 +42,6 @@
      <br>
 
     <?php
-    // echo "Validate = ".validate();
         include 'html/footer.html';
         require 'php/vtPreview.php';
         require 'php/vtReceipt.php';
