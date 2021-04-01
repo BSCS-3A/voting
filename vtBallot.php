@@ -14,7 +14,6 @@
 </head>
 
 <body>
-<img src="/img/admin.png" type = "image/png" style="width:128px;height:128px;">
     <?php
         require 'php/vtSanVal.php';
         // insert ajax here (jquery)
