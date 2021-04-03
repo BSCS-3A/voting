@@ -5,10 +5,9 @@
 		while($poss = $positions->fetch_assoc()){
 			if(($poss["vote_allow"] == 0 && $vote_glvl == $poss["grade_level"]) || $poss["vote_allow"] == 1){
 				$heir_id = $poss["heirarchy_id"];
-				// $choice = $_POST[$heir_id];
 				// sanitize
 				$choice = sanitize($_POST[$heir_id]);
-
+				echo $choice;
 				echo '<tr id="display-vote-info">
 					<td id="F-preview-Position">'.$poss["position_name"].'</td>
 					<td id="F-preview-CandidateName">'.$fname.' '.$lname.'</td>
