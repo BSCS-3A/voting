@@ -33,7 +33,7 @@
         <!-- <form method="POST" action = "<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" class="vtBallot" id="vtBallot"> -->
         <div id="voting-page">
                <?php
-                    generateBallot($positions);
+                    generateBallot($table);
                 ?>
                 <!-- <a href="#"> -->
                     <div id="vote-button"><button name = "vote-button" class="btn" >SUBMIT</button></div>

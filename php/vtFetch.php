@@ -1,16 +1,16 @@
 <?php
     function showCandidate($poss){
-        
+
     }
 
-    function generateBallot($positions){
+    function generateBallot($table){
         session_start();
         // $voter_glvl = $_SESSION['grade_level'];
         $vote_glvl = 7;
         $heir_id = 0;
         echo'    <div>';
         $counter = 0;
-        while($poss = $positions->fetch_assoc()){   // loop through all positions
+        while($poss = $table->fetch_assoc()){   // loop through all positions
             if(($poss["vote_allow"] == 0 && $vote_glvl == $poss["grade_level"]) || $poss["vote_allow"] == 1)
             if($heir_id != $poss["heirarchy_id"]){
                 $heir_id = $poss["heirarchy_id"];
