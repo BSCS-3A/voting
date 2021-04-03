@@ -1,16 +1,20 @@
 <?php
-    if (isset($_POST['vote-button'])){
-        $positions = $conn->query("SELECT * FROM candidate_position ORDER BY candidate_position.heirarchy_id ");
-        while($poss = $positions->fetch_assoc()){
-            $choice = $_GET[$poss["heirarchy_id"]];
-            if($choice != "Abstain"){
-                $conn->query("UPDATE candidate SET total_votes = total_votes + 1 WHERE candidate.candidate_id = $choice");
-            }
-        }
-    }
-    else{
-        echo "none";
-    }
+	if(isset($_POST['vote-submit'])) {
+		// $positions = $conn->query("SELECT * FROM candidate_positions");
+		mysqli_data_seek($result,0);
+		while ($poss = $positions->fetch_assoc()){
+			$choice =$_GET[$poss["hierarchy_id"]];
+			if($choice != "Abstain") {
+				$conn->query(" UPDATE candidate SET total_votes = total votes + 1 WHERE candidate.candidate_id = $choice");
+
+     		}
+   		}
+	}
+
+	else
+	{
+		echo "none";
+	}
 ?>
 
 <?php
