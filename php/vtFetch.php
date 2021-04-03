@@ -32,8 +32,7 @@
                 // end of candidate div
                  echo'                              </div>
                                         </label>
-                                </div>
-                     ';
+                                </div>';
                      $counter++;
             // end of position div
                
@@ -72,8 +71,7 @@
                 // end of candidate div
                  echo'                              </div>
                                         </label>
-                                </div>
-                     ';
+                                </div>';
                      $counter++;
                    }
             }
