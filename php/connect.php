@@ -9,6 +9,7 @@
         die("Connection to database failed: ". $conn->connect_error);
     }
     // Remove this section when inserting into mainline
+    session_start();
     $_SESSION['bumail'] = "a@gmail.com";
     $_SESSION['fname'] = "George";
     $_SESSION['lname'] = "Lucas";
@@ -16,7 +17,7 @@
     $_SESSION['grade_level'] = 7;
     $_SESSION['timestamp']=time();
     // Remove this section when inserting into mainline
-        
+
     //  $dbhost = "localhost";
     //  $dbuser = "root";
     //  $dbpass = "";
