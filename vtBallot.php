@@ -21,6 +21,9 @@
         include 'html/navbar.html';
         require 'php/connect.php';
         require 'php/vtFetch.php';
+        
+        // require 'php/vtConfirm.php';
+        require 'php/vtSubmit.php';
     ?>
 
     <header id="F-header" style="text-align:center"><b>STUDENT LEADER ELECTION</b></header><br>
@@ -43,11 +46,9 @@
 
     <?php
         include 'html/footer.html';
-        // require 'php/vtPreview.php';
-        // require 'php/vtReceipt.php';
-        // require 'js/modals.js';
-        // require 'php/vtConfirm.php';
-        require 'php/vtSubmit.php';
+        require 'php/vtPreview.php';
+        require 'php/vtReceipt.php';
+        require 'js/modals.js';
     ?>
 </body>
 
