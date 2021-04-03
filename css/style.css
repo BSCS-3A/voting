@@ -502,9 +502,11 @@ footer{
   }
   .candidate-box{
     flex-direction: column;
-
+    width: 90%;
   }
   .candidate-box > div{
+    display: inline-block;
+    width: 100%;
     margin-bottom: 5%;
   }
   }
