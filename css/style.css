@@ -303,18 +303,17 @@ nav img.Auser-profile{
 .candidate-box{
   display: flex;
   flex-direction: row;
-  width: 900px;
+  width: 1000px;
   padding: 20px;
 }
 
 .candidate-box > div{
-  width: 900px;
+  width: 1000px;
   margin: auto;
 }
 
 .candidate-info{
   margin-top: 20px;
-  display: inline-block;
   align-items: center;
 }
 
