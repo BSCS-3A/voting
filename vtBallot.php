@@ -43,11 +43,11 @@
 
     <?php
         include 'html/footer.html';
-        require 'php/vtPreview.php';
-        require 'php/vtReceipt.php';
-        require 'js/modals.js';
+        // require 'php/vtPreview.php';
+        // require 'php/vtReceipt.php';
+        // require 'js/modals.js';
         // require 'php/vtConfirm.php';
-        // require 'php/vtSubmit.php';
+        require 'php/vtSubmit.php';
     ?>
 </body>
 
