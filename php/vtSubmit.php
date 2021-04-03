@@ -1,7 +1,7 @@
 <?php
 	if(isset($_POST['vote-submit'])) {
 		// $positions = $conn->query("SELECT * FROM candidate_positions");
-		mysqli_data_seek($result,0);
+		mysqli_data_seek($positions,0);
 		while ($poss = $positions->fetch_assoc()){
 			$choice =$_GET[$poss["hierarchy_id"]];
 			if($choice != "Abstain") {
