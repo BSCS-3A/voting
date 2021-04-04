@@ -35,10 +35,7 @@
                <?php
                     generateBallot($table, $_SESSION['grade_level']);
                 ?>
-                <!-- <a href="#"> -->
                     <div id="vote-button"><button id="vote-btn" name = "vote-button" class="btn" >SUBMIT</button></div>
-                <!-- </a> -->
-
         </div>
         <!-- </form> -->
      </main>
@@ -48,8 +45,8 @@
         include 'html/footer.html';
         require 'php/vtPreview.php';
         require 'php/vtReceipt.php';
-        require 'js/modals.js';
     ?>
+    <script src = "js/modals.js"></script>
 </body>
 
 </html>

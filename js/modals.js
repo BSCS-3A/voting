@@ -1,4 +1,4 @@
-<script>
+      var xhttp = new XMLHttpRequest();
       //////////////// confirmation/////////////////////
       // Get the confirmation modal
       var confirmModal = document.getElementById("confirmation");               //first modal popup
@@ -54,5 +54,3 @@
           modal.style.display = "none";
         }
       }
-      
-</script>
