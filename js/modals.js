@@ -4,7 +4,7 @@
       var confirmModal = document.getElementById("confirmation");               //first modal popup
 
       // Get the button that opens the modal
-      var confirmBtn = document.getElementById("vote-button");                   //submit button from Voting page(Rica)
+      var confirmBtn = document.getElementById("vote-btn");                   //submit button from Voting page(Rica)
 
       // Get the <span> element that closes the modal
       var cancelBtn = document.getElementById("return-button");
@@ -40,7 +40,7 @@
       confirmBtn.onclick = function() {
         confirmModal.style.display = "none";
         modal.style.display = "block";
-        <?php submit()?>
+        // < ?php submit()?>
       }
 
       // When the user clicks on <span> (x), close the modal

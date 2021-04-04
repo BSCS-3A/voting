@@ -23,7 +23,7 @@
         require 'php/vtFetch.php';
         
         // require 'php/vtConfirm.php';
-        require 'php/vtSubmit.php';
+        // require 'php/vtSubmit.php';
     ?>
 
     <header id="F-header" style="text-align:center"><b>STUDENT LEADER ELECTION</b></header><br>
@@ -36,7 +36,7 @@
                     generateBallot($table, $_SESSION['grade_level']);
                 ?>
                 <!-- <a href="#"> -->
-                    <div id="vote-button"><button name = "vote-button" class="btn" >SUBMIT</button></div>
+                    <div id="vote-button"><button id="vote-btn" name = "vote-button" class="btn" >SUBMIT</button></div>
                 <!-- </a> -->
 
         </div>
