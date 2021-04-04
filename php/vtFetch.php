@@ -16,7 +16,7 @@
         $heir_id = 0;
         echo'    <div>';
         $counter = 0;
-        while($poss = $positions->fetch_assoc()){   // loop through all positions
+        while($poss = $table->fetch_assoc()){   // loop through all positions
             if(($poss["vote_allow"] == 0 && $voter_glvl == $poss["grade_level"]) || $poss["vote_allow"] == 1){
             // insert position div here
             if($heir_id != $poss["heirarchy_id"]){
