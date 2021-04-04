@@ -12,9 +12,7 @@
 
     }
 
-    function generateBallot($positions){
-      session_start();
-        $voter_glvl = $_SESSION['grade_level'];
+    function generateBallot($table, $voter_glvl){
         $heir_id = 0;
         echo'    <div>';
         $counter = 0;
