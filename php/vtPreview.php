@@ -24,8 +24,10 @@
         </div>
         <div class="F-modal-body">
             <div class="F-show-votes">
-                <p>Voter: <a href="#" id="VoterName">Voter's Name</a></p>
-
+                <p>Voter: <a href="#" id="VoterName"><?php echo $_SESSION['fname'].' '. $_SESSION['lname']?></a></p>
+                <!-- < ?php
+                  // showChoices();
+                ?> -->
                 <div class="display-votes">
                     <tr id="display-vote-info">
                       <td id="F-preview-Position">Position:</td>
