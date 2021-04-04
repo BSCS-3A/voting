@@ -1,15 +1,18 @@
 <?php
     function showCandidate($poss){
-      echo '<label class="checkbox">
-                    <input type="radio" name="'.$poss["heirarchy_id"].'" id="vote" value="'.$poss["candidate_id"].'">
-                    <span class="checkmark"></span>
+        echo '<label class="checkbox">
+            <input type="radio" name="'.$poss["heirarchy_id"].'" id="vote" value="'.$poss["candidate_id"].'">
+                <span class="checkmark"></span>
                     <a href=""><img src="'.$poss["photo"].'" class="candidate-photo" style="float: left; width: 100px; height: 100px;" alt="Candidate" ></a>
                     
                   <div class="candidate-info">';
-            echo '<a href="" id="F-CandidateName"><b> Name: ' .$poss["fname"]. " " . $poss["lname"]. '</b></a><br><a href="" id="F-Partylist"> Party: ' .$poss["party_name"]. '</a><br><a href="" id="F-Platform"> Platform: ' . $poss["platform_info"]. '</a>
-          </div>
-               </label>';
+        echo '<a href="" id="F-CandidateName"><b> Name: ' .$poss["fname"]. " " . $poss["lname"]. '</b></a><br><a href="" id="F-Partylist"> Party: ' .$poss["party_name"]. '</a><br><a href="" id="F-Platform"> Platform: ' . $poss["platform_info"]. '</a>
+        </div>
+        </label>';
 
+    }
+    function showAbstain($poss){
+        echo'<label class="checkbox"><input type="radio" name="'.$poss["heirarchy_id"].'"  id="vote" value = "Abstain"><span class="checkmark"></span><b> Abstain </b></label></div>';
     }
 
     function generateBallot($table, $voter_glvl){
@@ -18,47 +21,43 @@
         $counter = 0;
         while($poss = $table->fetch_assoc()){   // loop through all positions
             if(($poss["vote_allow"] == 0 && $voter_glvl == $poss["grade_level"]) || $poss["vote_allow"] == 1){
-            // insert position div here
-            if($heir_id != $poss["heirarchy_id"]){
-                $heir_id = $poss["heirarchy_id"];
-                if(($counter % 2) != 0){
-                  echo'    </div>';
-                }
-                echo'    </div>';
-                echo' <div id="F-container">';
-                $counter = 0;
-                echo '<a href="" id="F-position" style="float: left;">'.$poss["position_name"].'</a><hr>';
-                echo '<div><label class="checkbox"><input type="radio" name="'.$poss["heirarchy_id"].'"  id="vote" value = "Abstain"><span class="checkmark"></span><b> Abstain </b></label></div>';
-                // insert candidate divs here
-
-                    echo '<div class="candidate-box" >';
-                     // display abstain choice
-                        echo '<div>';
-                        // display candidate
-                          showCandidate($poss);
-                // end of candidate div
+                // position div
+                if($heir_id != $poss["heirarchy_id"]){
+                    $heir_id = $poss["heirarchy_id"];
+                    if(($counter % 2) != 0){
                         echo'</div>';
-                $counter++;
-            // end of position div 
-            }
-            else{
-                if(($counter % 2) != 0){
+                    }
+                    $counter = 0;
+                    echo'</div>';
+                    echo'<div id="F-container">';
+                    echo'<a href="" id="F-position" style="float: left;">'.$poss["position_name"].'</a><hr>';
+                    // candidate div
+                    echo'<div>';
+                    showAbstain($poss);         // display abstain choice
+                    echo'<div class="candidate-box" ><div>';
+                    showCandidate($poss);       // display candidate
+                    echo'</div>';               // end of candidate div
+                    $counter++;
+                // end of position div 
+                }
+                else{
+                    if(($counter % 2) != 0){
                         echo '<div>';
                         showCandidate($poss);   // display candidate
-                          echo'</div>
-                          </div>';              // end of candidate div
-                     $counter++;
-                   }
-                   else{
+                        echo'</div>';
+                        echo'</div>';           // end of candidate div
+                        $counter++;
+                    }
+                    else{
                     echo '<div class="candidate-box" >';
-                        echo '<div>';
+                        echo'<div>';
                         showCandidate($poss);   // display candidate
-                          echo'</div>';         // end of candidate div
-                     $counter++;
-                   }
-    
+                        echo'</div>';           // end of candidate div
+                        $counter++;
+                    }
+        
+                }
             }
-          }
 
         }
         echo'    </div>';
