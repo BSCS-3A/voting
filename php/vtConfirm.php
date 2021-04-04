@@ -7,6 +7,7 @@
 				$heir_id = $poss["heirarchy_id"];
 				// sanitize
 				$choice = sanitize($_POST[$heir_id]);
+				
 				echo $choice;
 				echo '<tr id="display-vote-info">
 					<td id="F-preview-Position">'.$poss["position_name"].'</td>
