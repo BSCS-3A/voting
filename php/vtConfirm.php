@@ -3,7 +3,7 @@
 	function showChoices(){
 		$positions = $conn->query("SELECT * FROM candidate_position ORDER BY heirarchy_id"); // get positions
 		while($poss = $positions->fetch_assoc()){
-			if(($poss["vote_allow"] == 0 && $vote_glvl == $poss["grade_level"]) || $poss["vote_allow"] == 1){
+			// if(($poss["vote_allow"] == 0 && $vote_glvl == $poss["grade_level"]) || $poss["vote_allow"] == 1){
 				$heir_id = $poss["heirarchy_id"];
 				// sanitize
 				$choice = sanitize($_POST[$heir_id]);
@@ -14,7 +14,7 @@
 					<td id="F-preview-CandidateName">'.$fname.' '.$lname.'</td>
 				</tr>
 				<br>';
-			}
+			// }
 		}
 	}
 
