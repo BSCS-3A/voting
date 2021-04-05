@@ -3,7 +3,7 @@
         echo '<label class="checkbox">
             <input type="radio" name="'.$poss["heirarchy_id"].'" id="vote" value="'.$poss["candidate_id"].'">
                 <span class="checkmark"></span>
-                    <a href=""><img src="'.$poss["photo"].'" class="candidate-photo" style="float: left; width: 100px; height: 100px;" alt="Candidate" ></a>
+                    <a href=""><img src="../'.$poss["photo"].'" class="candidate-photo" style="float: left; width: 100px; height: 100px;" alt="Candidate" ></a>
                     
                   <div class="candidate-info">';
         echo '<a href="" id="F-CandidateName"><b> Name: ' .$poss["fname"]. " " . $poss["lname"]. '</b></a><br><a href="" id="F-Partylist"> Party: ' .$poss["party_name"]. '</a><br><a href="" id="F-Platform"> Platform: ' . $poss["platform_info"]. '</a>
