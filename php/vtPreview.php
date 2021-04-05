@@ -25,9 +25,11 @@
         <div class="F-modal-body">
             <div class="F-show-votes">
                 <p>Voter: <a href="#" id="VoterName"><?php echo $_SESSION['fname'].' '. $_SESSION['lname']?></a></p>
-                <!-- < ?php
+                <?php
+                  $choice = $_GET[$poss["1"]];
+                  echo $choice;
                   // showChoices();
-                ?> -->
+                ?>
                 <div class="display-votes">
                     <tr id="display-vote-info">
                       <td id="F-preview-Position">Position:</td>
@@ -52,11 +54,12 @@
                     <tr id="display-vote-info">
                       <td id="F-preview-Position">Position:</td>
                       <td id="F-preview-CandidateName">Candidate Name</td>
-                    </tr>  
+                    </tr>
+                    <br> 
                 </div>
             </div>
             <br>
-            <p>Your votes will be submitted. Are you sure?</p>
+            <p>Your votes are about to be submitted. Are you sure?</p>
         </div>
         <div class="F-modal-button">
             <button type="button" id="return-button" class="F-returnBTN"><span>Return to Voting</span></button>
