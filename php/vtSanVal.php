@@ -10,6 +10,7 @@
         else{
             $page = $_SERVER['PHP_SELF'];
             $sec = "0";
+            // inseert sending message to admin about tampered data
             header("Refresh: $sec; url=$page");
         }
     }
