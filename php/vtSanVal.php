@@ -7,6 +7,11 @@
         if(is_int($data)){
             return $data;
         }
+        else{
+            $page = $_SERVER['PHP_SELF'];
+            $sec = "0";
+            header("Refresh: $sec; url=$page");
+        }
     }
 
     // remove malicious bits
@@ -70,10 +75,14 @@
         // }
     }
 
-    function isValidUser(){
-        // checks if user is registered
-        // add this function during construction; after added to mainline
-        return true;
+    function isValidUser($studd_id){  // checks if user is registered
+        $voter = $conn->query("SELECT * FROM student WHERE student_id = $studd_id");
+        if($voter["lname"] == $_SESSION['lname'] && $voter["fname"] == $_SESSION['fname'] && $voter["student_id"] == $_SESSION['student_id']){
+            return true;
+        }
+        else{
+            return true;
+        }
     }
 
     function isNotRepeated(){
