@@ -10,12 +10,13 @@
     }
     // Remove this section when inserting into mainline
     session_start();
-    $_SESSION['bumail'] = "a@gmail.com";
-    $_SESSION['fname'] = "George";
-    $_SESSION['lname'] = "Lucas";
-    $_SESSION['student_id'] = 123456;
+    $_SESSION['bumail'] = "dhanjaphetverastigue.ador@bicol-u.edu.ph";
+    $_SESSION['fname'] = "Maria";
+    $_SESSION['lname'] = "Madrona";
+    $_SESSION['student_id'] = 2;
     $_SESSION['grade_level'] = 7;
     $_SESSION['timestamp']=time();
+
     // Remove this section when inserting into mainline
 
     //  $dbhost = "localhost";

@@ -76,14 +76,19 @@
         // }
     }
 
-    function isValidUser($studd_id){  // checks if user is registered
+    function isValidUser($studd_id, $conn){  // checks if user is registered
         $voter = $conn->query("SELECT * FROM student WHERE student_id = $studd_id");
-        if($voter["lname"] == $_SESSION['lname'] && $voter["fname"] == $_SESSION['fname'] && $voter["student_id"] == $_SESSION['student_id']){
-            return true;
-        }
-        else{
-            return true;
-        }
+        // try{
+            if($voter["lname"] == $_SESSION['lname'] && $voter["fname"] == $_SESSION['fname'] && $voter["student_id"] == $_SESSION['student_id']){
+                return true;
+            }
+            else{
+                return true;
+            }
+    //     }
+    //     catch{
+            
+    //     }
     }
 
     function isNotRepeated(){

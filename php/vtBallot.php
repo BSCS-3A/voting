@@ -16,11 +16,11 @@
 
 <body>
     <?php
+        include '../html/navbar.html';
         require 'vtSanVal.php';
         // insert ajax here (jquery)
         // for automatic time based access control
         require 'connect.php';
-        include '../html/navbar.html';
         require 'vtFetch.php';
         
         // require 'php/vtConfirm.php';
@@ -34,9 +34,17 @@
         <!-- <form method="POST" action = "<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" class="vtBallot" id="vtBallot"> -->
         <div id="voting-page">
                <?php
-                    generateBallot($table, $_SESSION['grade_level']);
+                    // if(isValidTime()){
+                    //     if(isValidUser($_SESSION['student_id'], $conn)){
+                    //         if(!isVoted()){
+                                generateBallot($table, $_SESSION['grade_level']);
+                    //         }
+                    //     }
+                    // }
                 ?>
+                <!-- <form method = "POST" action = "vtPreview.php"> -->
                     <div id="vote-button"><button id="vote-btn" name = "vote-button" class="btn" >SUBMIT</button></div>
+                <!-- </form> -->
         </div>
         <!-- </form> -->
      </main>
@@ -48,6 +56,6 @@
         require 'vtReceipt.php';
     ?>
     <script src = "../js/modals.js"></script>
-</body>
+ </body>
 
 </html>

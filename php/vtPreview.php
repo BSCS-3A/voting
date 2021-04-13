@@ -25,37 +25,20 @@
         <div class="F-modal-body">
             <div class="F-show-votes">
                 <p>Voter: <a href="#" id="VoterName"><?php echo $_SESSION['fname'].' '. $_SESSION['lname']?></a></p>
-                <?php
-                  $choice = $_GET[$poss["1"]];
-                  echo $choice;
+                <!-- <?php
+                  // if(isset($_POST[vote-btn]))
+                  // $choice = $_GET[$poss["1"]];
+                  // echo $choice;
                   // showChoices();
-                ?>
+                ?> -->
                 <div class="display-votes">
+                  
                     <tr id="display-vote-info">
                       <td id="F-preview-Position">Position:</td>
                       <td id="F-preview-CandidateName">Candidate Name</td>
                     </tr>
                     <br>
-                    <tr id="display-vote-info">
-                      <td id="F-preview-Position">Position:</td>
-                      <td id="F-preview-CandidateName">Candidate Name</td>
-                    </tr>
-                    <br>
-                    <tr id="display-vote-info">
-                      <td id="F-preview-Position">Position:</td>
-                      <td id="F-preview-CandidateName">Candidate Name</td>
-                    </tr>
-                    <br>
-                    <tr id="display-vote-info">
-                      <td id="F-preview-Position">Position:</td>
-                      <td id="F-preview-CandidateName">Candidate Name</td>
-                    </tr>
-                    <br>
-                    <tr id="display-vote-info">
-                      <td id="F-preview-Position">Position:</td>
-                      <td id="F-preview-CandidateName">Candidate Name</td>
-                    </tr>
-                    <br> 
+
                 </div>
             </div>
             <br>
