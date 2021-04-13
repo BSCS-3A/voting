@@ -40,7 +40,7 @@ function test_input($data) {
   <br><br>
   <input type="submit" name="submit" value="Submit">  
 </form>
-<input type = "radio" id = "radio1" class = "radio1" name="radio1" value="radio1">
+<!-- <input type = "radio" id = "radio1" class = "radio1" name="radio1" value="radio1"> -->
 
 <?php
   echo "<h2>Your Input:</h2>";

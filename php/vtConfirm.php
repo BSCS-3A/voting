@@ -1,22 +1,43 @@
 <?php
 
-	function showChoices(){
-		$positions = $conn->query("SELECT * FROM candidate_position ORDER BY heirarchy_id"); // get positions
-		while($poss = $positions->fetch_assoc()){
-			// if(($poss["vote_allow"] == 0 && $vote_glvl == $poss["grade_level"]) || $poss["vote_allow"] == 1){
-				$heir_id = $poss["heirarchy_id"];
-				// sanitize
-				$choice = sanitize($_POST[$heir_id]);
-				
-				echo $choice;
-				echo '<tr id="display-vote-info">
-					<td id="F-preview-Position">'.$poss["position_name"].'</td>
-					<td id="F-preview-CandidateName">'.$fname.' '.$lname.'</td>
-				</tr>
-				<br>';
-			// }
+	include "connect.php";
+	$total = 0;
+	while($poss = $table->fetch_assoc()){
+		$total = $poss['heirarchy_id']; 
+	}
+	for($ctr = 1; $ctr <= 10; $ctr++){
+		if(isset($_POST[$ctr])){
+			// echo "<script>alert('".$_POST[$ctr]."');</script>";
+			mysqli_data_seek($table, 0);
+			while($poss = $table->fetch_assoc()){
+				if($poss['candidate_id'] == $_POST[$ctr]){
+					echo $poss['fname']." ". $poss['lname']."<br>"; 
+				}
+			}
 		}
 	}
+	header();
+	// echo ;
+
+
+
+	// function showChoices(){
+	// 	$positions = $conn->query("SELECT * FROM candidate_position ORDER BY heirarchy_id"); // get positions
+	// 	while($poss = $positions->fetch_assoc()){
+	// 		// if(($poss["vote_allow"] == 0 && $vote_glvl == $poss["grade_level"]) || $poss["vote_allow"] == 1){
+	// 			$heir_id = $poss["heirarchy_id"];
+	// 			// sanitize
+	// 			$choice = sanitize($_POST[$heir_id]);
+				
+	// 			echo $choice;
+	// 			echo '<tr id="display-vote-info">
+	// 				<td id="F-preview-Position">'.$poss["position_name"].'</td>
+	// 				<td id="F-preview-CandidateName">'.$fname.' '.$lname.'</td>
+	// 			</tr>
+	// 			<br>';
+	// 		// }
+	// 	}
+	// }
 
 
     // global $output;

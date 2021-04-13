@@ -31,7 +31,7 @@
 
     <main>
         <!--Candidates-->
-        <!-- <form method="POST" action = "<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" class="vtBallot" id="vtBallot"> -->
+        <form method="POST" action = "vtConfirm.php" class="vtBallot" id="vtBallot">
         <div id="voting-page">
                <?php
                     // if(isValidTime()){
@@ -46,7 +46,7 @@
                     <div id="vote-button"><button id="vote-btn" name = "vote-button" class="btn" >SUBMIT</button></div>
                 <!-- </form> -->
         </div>
-        <!-- </form> -->
+        </form>
      </main>
      <br>
 

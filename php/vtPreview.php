@@ -26,10 +26,6 @@
             <div class="F-show-votes">
                 <p>Voter: <a href="#" id="VoterName"><?php echo $_SESSION['fname'].' '. $_SESSION['lname']?></a></p>
                 <!-- <?php
-                  // if(isset($_POST[vote-btn]))
-                  // $choice = $_GET[$poss["1"]];
-                  // echo $choice;
-                  // showChoices();
                 ?> -->
                 <div class="display-votes">
                   
