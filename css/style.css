@@ -497,15 +497,14 @@ footer{
     text-align: center;
   }
   #F-container{
-    width: 80%;
+    min-width: 90%;
     position: relative;
   }
   .candidate-box{
     flex-direction: column;
-    width: 90%;
+    width: 100%;
   }
   .candidate-box > div{
-    display: inline-block;
     width: 100%;
     margin-bottom: 5%;
   }
