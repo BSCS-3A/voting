@@ -211,15 +211,11 @@ body {
   .F-modal{
     top: 50px;
   }
-  .F-returnBTN {
-    margin-left: 95px;
-  }
-  .F-confirmBTN {
-    margin-right: 85px;
-  }
+  
   .F-modal-content {
     position: relative;
     overflow: auto;
+    min-width: 80%;
   }
   
 }

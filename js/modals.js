@@ -15,6 +15,12 @@ confirmBtn.onclick = function() {
   confirmModal.style.display = "block";
 }
 
+// When the modal is open, background is unscrollable
+document.querySelector("#vote-btn").addEventListener('click', function(){
+  document.querySelector("#confirmation").style.display = 'block';
+  document.querySelector("body").style.overflow = 'hidden';
+})
+
 // When the user clicks on <span>, close the modal
 cancelBtn.onclick = function() {
   confirmModal.style.display = "none";
@@ -26,6 +32,12 @@ window.onclick = function(event) {
     receiptModal.style.display = "none";
   }
 }
+
+document.querySelector("#return-button").addEventListener('click', function(){
+  document.querySelector("#confirmation").style.display = 'none';
+  document.querySelector("body").style.overflow = 'visible';
+})
+
 //////////////// receipt/////////////////////
 
 
