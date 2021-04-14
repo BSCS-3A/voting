@@ -7,6 +7,7 @@
 	// 'age'=>28);
 
 	// code para malagay sa isang array $data lahat ng info
+	// sample coode pang fetch galing sa form
 	for($i = 0; $i <5; $i++){
 		$data[$i] = $cookied[$i];
 		echo $data[$i]."<br>";
