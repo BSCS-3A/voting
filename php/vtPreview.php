@@ -28,6 +28,26 @@
                 <?php
                   echo $candidate;
                 ?>
+                <?php
+              if(isset($_POST['vote-button'])){
+                $posquery = $conn->query("SELECT * FROM candidate_position ORDER BY candidate_position.heirarchy_id");
+                while($pos = $posquery->fetch_assoc()){
+                 if(!empty($_POST[$pos["heirarchy_id"]])) {
+                  $id = $_POST[$pos["heirarchy_id"]];
+              $choice_query = $conn->query("SELECT * FROM candidate INNER JOIN student ON candidate.student_id = student.student_id WHERE candidate.candidate_id = $id");
+                  while($choice = $choice_query->fetch_assoc()){
+                    echo '<tr id="display-vote-info">
+                              <td id="F-preview-Position">'.$pos["position_name"].':</td>
+                              <td id="F-preview-CandidateName">'.$choice["fname"]. " " . $choice["lname"].'</td>
+                          </tr>
+                          <br>';
+                      }
+                    } else {
+                    echo 'Please select the value.<br>';
+                    }
+                  }
+                  }
+              ?>
                 <div class="display-votes">
                   
                     <tr id="display-vote-info">
