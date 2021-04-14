@@ -1,31 +1,31 @@
 <?php
 
-	include "connect.php";
-	// $tables = $GLOBALS["table"];
+	// include "connect.php";
+	// // $tables = $GLOBALS["table"];
 
-	// get selection from ballot
-	$total = 0;
-	while($poss = $table->fetch_assoc()){
-		$total = $poss['heirarchy_id']; 
-	}
-	for($ctr = 1; $ctr <= 10; $ctr++){
-		// if(($poss["vote_allow"] == 0 && $_SESSION['grade_level'] == $poss["grade_level"]) || $poss["vote_allow"] == 1)
-		if(isset($_POST[$ctr])){
-			// echo "<script>alert('".$_POST[$ctr]."');</script>";
-			mysqli_data_seek($table, 0);
-			while($poss = $table->fetch_assoc()){
-				if(($poss["vote_allow"] == 0 && $_SESSION['grade_level'] == $poss["grade_level"]) || $poss["vote_allow"] == 1){
+	// // get selection from ballot
+	// $total = 0;
+	// while($poss = $table->fetch_assoc()){
+	// 	$total = $poss['heirarchy_id']; 
+	// }
+	// for($ctr = 1; $ctr <= 10; $ctr++){
+	// 	// if(($poss["vote_allow"] == 0 && $_SESSION['grade_level'] == $poss["grade_level"]) || $poss["vote_allow"] == 1)
+	// 	if(isset($_POST[$ctr])){
+	// 		// echo "<script>alert('".$_POST[$ctr]."');</script>";
+	// 		mysqli_data_seek($table, 0);
+	// 		while($poss = $table->fetch_assoc()){
+	// 			if(($poss["vote_allow"] == 0 && $_SESSION['grade_level'] == $poss["grade_level"]) || $poss["vote_allow"] == 1){
 		
-					echo "Abstain <br>";
-				}
-				if($poss['candidate_id'] == $_POST[$ctr]){
-					echo $poss['fname']." ". $poss['lname']."<br>"; 
-				}
-			}
-		}
-		else{
-		}
-	}
+	// 				echo "Abstain <br>";
+	// 			}
+	// 			if($poss['candidate_id'] == $_POST[$ctr]){
+	// 				echo $poss['fname']." ". $poss['lname']."<br>"; 
+	// 			}
+	// 		}
+	// 	}
+	// 	else{
+	// 	}
+	// }
 
 	// header();
 	// echo ;

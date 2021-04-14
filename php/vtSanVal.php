@@ -82,7 +82,7 @@
         // check if user has already voted
         // $_SESSION['grade_level']
         // see if login already has voter info
-        return true;
+        return false;
     }
 
     function isValidUser($conn){  // checks if user is registered
