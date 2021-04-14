@@ -11,6 +11,9 @@
 
   
   <body>
+    <?php
+    require 'connect.php';
+    ?>
 
     <!-- Trigger/Open The Modal -->
     <!-- <button id="vote-button">Submit</button> -->
@@ -24,11 +27,9 @@
         </div>
         <div class="F-modal-body">
             <div class="F-show-votes">
-                <p>Voter: <a href="#" id="VoterName"><?php echo $_SESSION['fname'].' '. $_SESSION['lname']?></a></p>
-                <?php
-                  echo $candidate;
-                ?>
-                <?php
+                <p>Voter: <a href="#" id="VoterName"><?php echo $_SESSION['fname'].' '. $_SESSION['lname']?></a></p> 
+                <div class="display-votes">
+              <?php
               if(isset($_POST['vote-button'])){
                 $posquery = $conn->query("SELECT * FROM candidate_position ORDER BY candidate_position.heirarchy_id");
                 while($pos = $posquery->fetch_assoc()){
@@ -48,7 +49,7 @@
                   }
                   }
               ?>
-                <div class="display-votes">
+                
                   
                     <tr id="display-vote-info">
                       <td id="F-preview-Position">Position:</td>
