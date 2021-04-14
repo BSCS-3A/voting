@@ -1,5 +1,30 @@
 <?php
 
+	// ordinary variable na pinangalanan kong cookied
+	$cookied = array('10','11', '12','13','14');
+	// $data = array('email'=>'test@test.com',
+	// array("php","mysql"),
+	// 'age'=>28);
+
+	// code para malagay sa isang array $data lahat ng info
+	for($i = 0; $i <5; $i++){
+		$data[$i] = $cookied[$i];
+		echo $data[$i]."<br>";
+	}
+	// ilagay sa url ang laman ng array $data
+	echo "<a href='vtConfirm.php?" . http_build_query($data) . "'>next page</a><br>";
+
+	// echo $_GET['email']; echo "<br />";
+	// kunin ang values ng array na nasa loob ng url
+	for($i = 0; $i <5; $i++){
+		$data[$i] = $cookied[$i];
+		// echo $data[$i]."<br>";
+		echo $_GET[$i]; echo "<br />";
+	}
+	echo $_GET[0]; echo "<br />";
+	// echo $_GET['age']; echo "<br />";
+
+
 	// include "connect.php";
 	// // $tables = $GLOBALS["table"];
 
@@ -8,18 +33,19 @@
 	// while($poss = $table->fetch_assoc()){
 	// 	$total = $poss['heirarchy_id']; 
 	// }
-	// for($ctr = 1; $ctr <= 10; $ctr++){
+	// for($ctr = 1; $ctr <= $total; $ctr++){
 	// 	// if(($poss["vote_allow"] == 0 && $_SESSION['grade_level'] == $poss["grade_level"]) || $poss["vote_allow"] == 1)
 	// 	if(isset($_POST[$ctr])){
 	// 		// echo "<script>alert('".$_POST[$ctr]."');</script>";
 	// 		mysqli_data_seek($table, 0);
 	// 		while($poss = $table->fetch_assoc()){
 	// 			if(($poss["vote_allow"] == 0 && $_SESSION['grade_level'] == $poss["grade_level"]) || $poss["vote_allow"] == 1){
-		
-	// 				echo "Abstain <br>";
-	// 			}
-	// 			if($poss['candidate_id'] == $_POST[$ctr]){
-	// 				echo $poss['fname']." ". $poss['lname']."<br>"; 
+	// 				if($poss['candidate_id'] == $_POST[$ctr]){
+	// 					echo $poss['fname']." ". $poss['lname']."<br>"; 
+	// 				}
+	// 				else if($_POST[$ctr] == "Abstain"){
+	// 					echo "Abstain <br>";
+	// 				}
 	// 			}
 	// 		}
 	// 	}
