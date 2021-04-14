@@ -22,7 +22,8 @@
         // for automatic time based access control
         require 'connect.php';
         require 'vtFetch.php';
-        
+        require 'vtPreview.php';
+        require 'vtReceipt.php';
         // require 'php/vtConfirm.php';
         // require 'php/vtSubmit.php';
     ?>
@@ -31,7 +32,7 @@
 
     <main>
         <!--Candidates-->
-        <form method="POST" action = "vtConfirm.php" class="vtBallot" id="vtBallot">
+        <!-- <form method="POST" action = "< ?php // echo 'vtConfirm.php'; echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" class="vtBallot" id="vtBallot"> -->
         <div id="voting-page">
                <?php
                     // if(isValidTime()){
@@ -46,14 +47,12 @@
                     <div id="vote-button"><button id="vote-btn" name = "vote-button" class="btn" >SUBMIT</button></div>
                 <!-- </form> -->
         </div>
-        </form>
+        <!-- </form> -->
      </main>
      <br>
 
     <?php
         include '../html/footer.html';
-        require 'vtPreview.php';
-        require 'vtReceipt.php';
     ?>
     <script src = "../js/modals.js"></script>
  </body>

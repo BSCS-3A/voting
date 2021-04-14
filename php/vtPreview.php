@@ -25,8 +25,9 @@
         <div class="F-modal-body">
             <div class="F-show-votes">
                 <p>Voter: <a href="#" id="VoterName"><?php echo $_SESSION['fname'].' '. $_SESSION['lname']?></a></p>
-                <!-- <?php
-                ?> -->
+                <?php
+                  echo $candidate;
+                ?>
                 <div class="display-votes">
                   
                     <tr id="display-vote-info">

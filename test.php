@@ -8,9 +8,8 @@
 <body>  
 
 <?php
-// define variables and set to empty values
-$nameErr = $emailErr = $candidateErr = $websiteErr = "";
-$name = $email = $candidate = $comment = $website = "";
+$candidateErr = "";
+$candidate = "";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
@@ -40,7 +39,6 @@ function test_input($data) {
   <br><br>
   <input type="submit" name="submit" value="Submit">  
 </form>
-<!-- <input type = "radio" id = "radio1" class = "radio1" name="radio1" value="radio1"> -->
 
 <?php
   echo "<h2>Your Input:</h2>";
