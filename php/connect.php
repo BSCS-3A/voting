@@ -12,8 +12,8 @@
     session_start();
     $_SESSION['bumail'] = "dhanjaphetverastigue.ador@bicol-u.edu.ph";
     $_SESSION['fname'] = "Maria";
-    $_SESSION['lname'] = "Madrona";
-    $_SESSION['student_id'] = 2;
+    $_SESSION['lname'] = "Hanway";
+    $_SESSION['student_id'] = 1;
     $_SESSION['grade_level'] = 7;
     $_SESSION['timestamp']=time();
 

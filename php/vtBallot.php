@@ -35,13 +35,16 @@
         <!-- <form method="POST" action = "< ?php // echo 'vtConfirm.php'; echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" class="vtBallot" id="vtBallot"> -->
         <div id="voting-page">
                <?php
-                    // if(isValidTime()){
-                    //     if(isValidUser($_SESSION['student_id'], $conn)){
-                    //         if(!isVoted()){
-                                generateBallot($table, $_SESSION['grade_level']);
-                    //         }
-                    //     }
-                    // }
+                    if(isValidTime()){// Not yet implemented
+                        if(isValidUser($conn)){
+                            if(!isVoted($table)){
+                                generateBallot($table);
+                            }
+                        }
+                        else{
+                            // destroy session and return to login
+                        }
+                    }
                 ?>
                 <!-- <form method = "POST" action = "vtPreview.php"> -->
                     <div id="vote-button"><button id="vote-btn" name = "vote-button" class="btn" >SUBMIT</button></div>

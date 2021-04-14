@@ -66,7 +66,8 @@
         $date_st = new DateTime("2021-03-20 08:00:00");     // start sched date
         $date_en = new DateTime("2021-03-30 16:00:00");     // end sched date
 
-        // Compare the dates 
+        // Compare the dates (current vs scheduled)
+        // Fix the date comparison during compilation
         // if ($date_pr > $date_st && $date_pr < $date_en) {
         //     echo $date1->format("Y-m-d") . " is later than " . $date2->format("Y-m-d"); 
         // }
@@ -74,21 +75,28 @@
         //     echo $date1->format("Y-m-d") . " is older than " . $date2->format("Y-m-d"); 
             return true;
         // }
+        // show schedule message when time is invalid
     }
 
-    function isValidUser($studd_id, $conn){  // checks if user is registered
+    function isVoted($table){
+        // check if user has already voted
+        // $_SESSION['grade_level']
+        // see if login already has voter info
+        return true;
+    }
+
+    function isValidUser($conn){  // checks if user is registered
+        $studd_id = $_SESSION['student_id'];
         $voter = $conn->query("SELECT * FROM student WHERE student_id = $studd_id");
-        // try{
-            if($voter["lname"] == $_SESSION['lname'] && $voter["fname"] == $_SESSION['fname'] && $voter["student_id"] == $_SESSION['student_id']){
-                return true;
-            }
-            else{
-                return true;
-            }
-    //     }
-    //     catch{
-            
-    //     }
+        $poss = $voter->fetch_assoc();
+        // echo $studd_id;
+        // echo $poss["fname"]." ".$poss["lname"]." ".$poss["student_id"];
+        if($poss["lname"] == $_SESSION['lname'] && $poss["fname"] == $_SESSION['fname'] && $poss["student_id"] == $_SESSION['student_id'] && $poss["bumail"] == $_SESSION['bumail']){
+            return true;
+        }
+        else{
+            return false;
+        }
     }
 
     function isNotRepeated(){

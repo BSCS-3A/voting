@@ -15,12 +15,12 @@
         echo'<label class="checkbox"><input type="radio" name="'.$poss["heirarchy_id"].'"  id="vote" value = "Abstain"><span class="checkmark"></span><b> Abstain </b></label></div>';
     }
 
-    function generateBallot($table, $voter_glvl){
+    function generateBallot($table){
         $heir_id = 0;
         echo'    <div>';
         $counter = 0;
         while($poss = $table->fetch_assoc()){   // loop through all positions
-            if(($poss["vote_allow"] == 0 && $voter_glvl == $poss["grade_level"]) || $poss["vote_allow"] == 1){
+            if(($poss["vote_allow"] == 0 && $_SESSION['grade_level'] == $poss["grade_level"]) || $poss["vote_allow"] == 1){
                 // position div
                 if($heir_id != $poss["heirarchy_id"]){
                     $heir_id = $poss["heirarchy_id"];
