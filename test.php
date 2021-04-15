@@ -46,7 +46,15 @@ function test_input($data) {
   // $radio1 = $_POST['radio1'];
   // echo $radio1;
 ?>
+<br>
+<span id="fname">George</span>
+<span id="lname">Michael</span>
+
+<?php
+  echo '<input type="radio" onclick="document.getElementById(\'fname\').innerHTML = \'Martin\';document.getElementById(\'lname\').innerHTML = \'Barrimore\'">';
+?>
 <script>
+
 //  var cand = {
 //    "name": "Meww",
 //    "species": "human"

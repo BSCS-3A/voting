@@ -16,14 +16,12 @@
 
 <body>
     <?php
+        require 'connect.php'; // Remove this when compiling
         include '../html/navbar.html';
         require 'vtSanVal.php';
         // insert ajax here (jquery)
         // for automatic time based access control
-        require 'connect.php';
         require 'vtFetch.php';
-        require 'vtPreview.php';
-        require 'vtReceipt.php';
         // require 'php/vtConfirm.php';
         // require 'php/vtSubmit.php';
     ?>
@@ -32,14 +30,20 @@
 
     <main>
         <!--Candidates-->
-        <form method="POST" action = "<?php // echo 'vtConfirm.php'; 
-        echo htmlspecialchars($_SERVER["PHP_SELF"])."?id=2";?>" class="vtBallot" id="vtBallot">
+        <form id = "main-form" method="POST" action = "
+        <?php 
+        // echo 'vtConfirm.php'; 
+        // echo 'vtPreview.php';
+        echo htmlspecialchars($_SERVER["PHP_SELF"])."?id=2";
+        ?>" class="vtBallot" id="vtBallot">
         <div id="voting-page">
                <?php
                     if(isValidTime()){// Not yet implemented
                         if(isValidUser($conn)){
                             if(!isVoted($table)){
                                 generateBallot($table);
+                                require 'vtPreview.php';
+                                require 'vtReceipt.php';
                             }
                         }
                         else{

@@ -13,6 +13,7 @@ var cancelBtn = document.getElementById("return-button");
 // When the user clicks the submit button, open the modal 
 confirmBtn.onclick = function() {
   confirmModal.style.display = "block";
+  return false;
 }
 
 // When the modal is open, background is unscrollable
