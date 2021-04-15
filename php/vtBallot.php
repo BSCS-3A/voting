@@ -34,7 +34,8 @@
         <?php 
         // echo 'vtConfirm.php'; 
         // echo 'vtPreview.php';
-        echo htmlspecialchars($_SERVER["PHP_SELF"])."?id=2";
+        echo 'vtSubmit.php';
+        // echo htmlspecialchars($_SERVER["PHP_SELF"])."?id=2";
         ?>" class="vtBallot" id="vtBallot">
         <div id="voting-page">
                <?php
@@ -52,7 +53,7 @@
                     }
                 ?>
                 <!-- <form method = "POST" action = "vtPreview.php"> -->
-                    <div id="vote-button"><button id="vote-btn" name = "vote-button" class="btn" >SUBMIT</button></div>
+                    <div id="vote-button"><button id="vote-btn" name = "vote-button" class="btn" type = "button">SUBMIT</button></div>
                 <!-- </form> -->
         </div>
         </form>
