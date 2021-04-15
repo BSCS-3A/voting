@@ -42,12 +42,9 @@
                                   <td id="F-preview-CandidateName"><span id = "'.$poss["heirarchy_id"].'">Abstain</span></td>
                                 </tr>
                                 <br>';
-                                $counter++;
                             // end of position div 
                             }
-                            else{
-                              $counter++;
-                            }
+                            $counter++;
                         }
             
                     }
@@ -66,7 +63,7 @@
         </div>
         <div class="F-modal-button">
             <button type="button" id="return-button" class="F-returnBTN"><span>Return to Voting</span></button>
-            <button type="button" id="confirm-button" class="F-confirmBTN" form="main-form" ><span>Confirm Submission</span></button>
+            <button type="submit" id="confirm-button" class="F-confirmBTN"><span>Confirm Submission</span></button>
         </div>
       </div>
     </div>
