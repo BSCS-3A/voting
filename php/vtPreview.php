@@ -46,7 +46,6 @@
                             }
                             $counter++;
                         }
-            
                     }
                     echo'    </div>';
                   ?>
