@@ -1,6 +1,7 @@
 <?php
 	echo "Candidates: <br>";
-	if(isset($_POST['vote-submit'])){
+	if(isset($_POST['vote-btn'])){
+		echo "Blah";
 		if(count($_POST) == 1){
 			$_SESSION['error'][] = 'Please vote atleast one candidate';
 		}
@@ -22,7 +23,6 @@
 							foreach($_POST[$position] as $key => $values){
 								$sql_array[] = "INSERT INTO votes (voters_id, candidate_id, position_id) VALUES ('".$voter['id']."', '$values', '$pos_id')";
 							}
-
 						}
 						
 					}
