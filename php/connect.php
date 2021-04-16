@@ -9,7 +9,17 @@
         die("Connection to database failed: ". $conn->connect_error);
     }
     // Remove this section when inserting into mainline
-    session_start();
+
+//   $dbhost = "localhost";
+//      $dbuser = "root";
+//      $dbpass = "";
+//      $db = "check";
+//      $conn = mysqli_connect($dbhost, $dbuser, $dbpass,$db);
+//      if ($conn->connect_error) {
+//          die("Connection to database failed: ". $conn->connect_error);
+//      }
+
+    // session_start();
     $_SESSION['bumail'] = "dhanjaphetverastigue.ador@bicol-u.edu.ph";
     $_SESSION['fname'] = "Maria";
     $_SESSION['lname'] = "Hanway";
@@ -42,10 +52,11 @@
     }
     }
 
-    function test_input($data) {
-    $data = trim($data);
-    $data = stripslashes($data);
-    $data = htmlspecialchars($data);
-    return $data;
-    }
+    // function test_input($data) {
+    // $data = trim($data);
+    // $data = stripslashes($data);
+    // $data = htmlspecialchars($data);
+    // return $data;
+    // }
+
 ?>

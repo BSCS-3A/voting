@@ -22,8 +22,9 @@
         // for automatic time based access control
         require 'connect.php';
         require 'vtFetch.php';
-        require 'vtPreview.php';
-        require 'vtReceipt.php';
+        // include 'vtPreview.php';
+        // require 'vtPreview.php';
+        // require 'vtReceipt.php';
         // require 'php/vtConfirm.php';
         // require 'php/vtSubmit.php';
     ?>
@@ -31,9 +32,11 @@
     <header id="F-header" style="text-align:center"><b>STUDENT LEADER ELECTION</b></header><br>
 
     <main>
-        <!--Candidates-->
-        <form method="POST" action = "<?php // echo 'vtConfirm.php'; 
-        echo htmlspecialchars($_SERVER["PHP_SELF"])."?id=2";?>" class="vtBallot" id="vtBallot">
+        <!--Candidates--> 
+        <form method="POST" action = "vtPreview.php" class="vtBallot" id="vtBallot">
+
+        <!-- <form method="POST" action = "<?php // echo 'vtConfirm.php'; 
+        //echo htmlspecialchars($_SERVER["PHP_SELF"])."?id=2";?>" class="vtBallot" id="vtBallot"> -->
         <div id="voting-page">
                <?php
                     if(isValidTime()){// Not yet implemented
@@ -58,7 +61,7 @@
     <?php
         include '../html/footer.html';
     ?>
-    <script src = "../js/modals.js"></script>
+    <!-- <script src = "../js/modals.js"></script> -->
  </body>
 
 </html>
