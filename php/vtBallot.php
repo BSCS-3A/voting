@@ -16,6 +16,10 @@
 
 <body>
     <?php
+    // info: 
+    // php uses name
+    // css uses class
+    // js uses id
         require 'connect.php'; // Remove this when compiling
         include '../html/navbar.html';
         require 'vtSanVal.php';
@@ -34,7 +38,7 @@
         <?php 
         // echo 'vtConfirm.php'; 
         // echo 'vtPreview.php';
-        require 'vtSubmit.php';
+        echo 'vtSubmit.php';
         // echo htmlspecialchars($_SERVER["PHP_SELF"])."?id=2";
         ?>" class="vtBallot" id="vtBallot">
         <div id="voting-page">

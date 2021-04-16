@@ -37,7 +37,8 @@
                             if($heir_id != $poss["heirarchy_id"]){
                                 $heir_id = $poss["heirarchy_id"];
                                 // echo position
-                                echo '<tr id="display-vote-info">
+                                echo 
+                                '<tr id="display-vote-info">
                                   <td id="F-preview-Position">'.$poss["position_name"].':</td>
                                   <td id="F-preview-CandidateName"><span id = "'.$poss["heirarchy_id"].'">Abstain</span></td>
                                 </tr>
@@ -62,7 +63,7 @@
         </div>
         <div class="F-modal-button">
             <button type="button" id="return-button" class="F-returnBTN"><span>Return to Voting</span></button>
-            <button type="submit" id="confirm-button" class="F-confirmBTN"><span>Confirm Submission</span></button>
+            <button type="submit" name = "confirm-button" id="confirm-button" class="F-confirmBTN"><span>Confirm Submission</span></button>
         </div>
       </div>
     </div>
