@@ -43,8 +43,8 @@
                         if(isValidUser($conn)){
                             if(!isVoted($table)){
                                 generateBallot($table);
-                                require 'vtPreview.php';
-                                require 'vtReceipt.php';
+                                // require 'vtPreview.php';
+                                // require 'vtReceipt.php';
                             }
                         }
                         else{
@@ -63,7 +63,7 @@
     <?php
         include '../html/footer.html';
     ?>
-    <script src = "../js/modals.js"></script>
+    <!-- <script src = "../js/modals.js"></script> -->
  </body>
 
 </html>
