@@ -27,7 +27,7 @@
         // for automatic time based access control
         require 'vtFetch.php';
         // require 'php/vtConfirm.php';
-        // require 'php/vtSubmit.php';
+        // require 'vtSubmit.php';
     ?>
 
     <header id="F-header" style="text-align:center"><b>STUDENT LEADER ELECTION</b></header><br>
@@ -47,8 +47,8 @@
                         if(isValidUser($conn)){
                             if(!isVoted($table)){
                                 generateBallot($table);
-                                // require 'vtPreview.php';
-                                // require 'vtReceipt.php';
+                                require 'vtPreview.php';
+                                require 'vtReceipt.php';
                             }
                         }
                         else{
@@ -57,7 +57,7 @@
                     }
                 ?>
                 <!-- <form method = "POST" action = "vtPreview.php"> -->
-                    <div id="vote-button"><button id="vote-btn" name = "vote-button" class="btn" type = "submit">SUBMIT</button></div>
+                    <div id="vote-button"><button id="vote-btn" name = "vote-button" class="btn" type = "button">SUBMIT</button></div>
                 <!-- </form> -->
         </div>
         </form>
@@ -67,7 +67,7 @@
     <?php
         include '../html/footer.html';
     ?>
-    <!-- <script src = "../js/modals.js"></script> -->
+    <script src = "../js/modals.js"></script>
  </body>
 
 </html>

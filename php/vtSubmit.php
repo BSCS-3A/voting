@@ -1,6 +1,6 @@
 <?php
 	echo "Candidates: <br>";
-	if(isset($_POST['vote-button'])){
+	if(isset($_POST['confirm-button'])){
 		echo "Blah";
 		if(count($_POST) == 1){
 			$_SESSION['error'][] = 'Please vote atleast one candidate';
