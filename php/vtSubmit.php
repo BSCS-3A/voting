@@ -1,37 +1,45 @@
 <?php
-	echo "Candidates: <br>";
+	require "connect.php";
+	// echo "Candidates: <br>"; // remove
 	if(isset($_POST['confirm-button'])){
-		echo "Blah";
+		// echo "Blah"; 	// remove
+		// echo $_POST['2']; // remove
 		if(count($_POST) == 1){
 			$_SESSION['error'][] = 'Please vote atleast one candidate';
 		}
 		else{
-			$_SESSION['post'] = $_POST;
-			$sql = "SELECT * FROM positions";
-			$query = $conn->query($sql);
-			$error = false;
-			$sql_array = array();
-			while($row = $query->fetch_assoc()){
-				$pos_id = $row['id'];
-				if(isset($_POST[$position])){
+			// $_SESSION['post'] = $_POST;
+			// $sql = "SELECT * FROM positions";
+			// $query = $conn->query($sql);
+			// $error = false;
+			// $sql_array = array();
+			$row = $table->fetch_assoc();
+			$pos_id = $row['heirarchy_id'];
+			mysqli_data_seek($table, 0);
+			while($row = $table->fetch_assoc()){
+				if($pos_id == $row['position_id']){
+					$pos_id = $row['position_id'];
+				}
+				if(isset($_POST[$pos_id])){
 					if($row['max_vote'] > 1){
-						if(count($_POST[$position]) > $row['max_vote']){
+						if(count($_POST[$pos_id]) > $row['max_vote']){
 							$error = true;
 							$_SESSION['error'][] = 'You can only choose '.$row['max_vote'].' candidates for '.$row['description'];
 						}
 						else{
-							foreach($_POST[$position] as $key => $values){
+							foreach($_POST[$pos_id] as $key => $values){
 								$sql_array[] = "INSERT INTO votes (voters_id, candidate_id, position_id) VALUES ('".$voter['id']."', '$values', '$pos_id')";
 							}
 						}
 						
 					}
 					else{
-						$candidate = $_POST[$position];
+						$candidate = $_POST[$pos_id];
 						$sql_array[] = "INSERT INTO votes (voters_id, candidate_id, position_id) VALUES ('".$voter['id']."', '$candidate', '$pos_id')";
 					}
 
 				}
+				$pos_id++;
 				
 			}
 
