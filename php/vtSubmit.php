@@ -1,23 +1,46 @@
 <?php
 	require "connect.php";
 	mysqli_data_seek($table, 0);
-	$heir_id = 0;
-	echo'    <div>';
+
 	$counter = 0;
+	$votes = array(array());
+	$status = "";
 	while($poss = $table->fetch_assoc()){   // loop through all positions
-		$choice = $_POST[$poss['candidate_id']];
-		$candidate = $poss['candidate_id'];
-		echo $poss["position_name"].": ".$poss["fname"].$poss["lname"];
-		if($poss['candidate_id'] == $choice){
-			$conn->query("UPDATE candidate SET total_votes = total_votes + 1 WHERE candidate.candidate_id = $candidate");
-			$conn->query("");
-			
-			echo "Voted <br>";
+		echo $poss["position_name"].": ".$poss["fname"].$poss["lname"]; // 
+
+		if(($poss["vote_allow"] == 0 && $_SESSION['grade_level'] == $poss["grade_level"]) || $poss["vote_allow"] == 1){
+			$choice = $_POST[$poss['heirarchy_id']];
+
+			$candidate = $poss['candidate_id'];
+			if($poss['candidate_id'] == $choice){
+				$conn->query("UPDATE candidate SET total_votes = total_votes + 1 WHERE candidate.candidate_id = $candidate");		
+				echo "Voted <br>";
+				$status = "Voted";
+			}
+			else{
+				echo "Abstain <br>";
+				$status = "Abstain";
+			}
 		}
 		else{
 			echo "Abstain <br>";
+			$status = "Abstain";
 		}
+		// add to array
+		$votes[$counter] = array(NULL, $poss['student_id'], $poss['candidate_id'], $status, 'current_timestamp()');
+
 	}
+
+	// send vote table
+	$sqlVotes = serialize($votes);
+	$conn->query("INSERT INTO `vote` (`vote_log_id`, `student_id`, `candidate_id`, `status`, `time_stamp`) VALUES $sqlVotes");
+
+	// update voter's status
+	// generate reciept
+	// show receipt
+
+
+
 	
 	// // echo "Candidates: <br>"; // remove
 	// if(isset($_POST['confirm-button'])){
