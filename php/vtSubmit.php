@@ -14,6 +14,7 @@
 				$choice = 0;
 			}
 			else{
+				$_POST[$poss['heirarchy_id']] = filter_var($_POST[$poss['heirarchy_id']], FILTER_SANITIZE_STRING);
 				// insert sanitation and validation function here
 				$choice = cleanInput($_POST[$poss['heirarchy_id']]);
 				// $choice = $_POST[$poss['heirarchy_id']];

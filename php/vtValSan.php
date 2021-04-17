@@ -32,20 +32,15 @@
         return $output;
     }
 
-
-    function validate(){
-        // return true if vote is valid, false if not
-        return (isValidCandidate() && isValidTime() && isValidUser() && isNotRepeated());
-    }
-
-    function isValidCandidate(){
+    function isValidCandidate($candidate, $heir_id){
         // checks if selection is valid candidate
-        // $i = $canCtr;
-        // while($i>0){
-            // 	while($j<)
-            // 	if($candidates[$i][])
-            // }
-        return true;
+        mysqli_data_seek($table, 0);
+        while($poss = $table->fetch_assoc()){
+            if($candidate == $poss['candidate_id'] && $heir_id == $poss['heir_id']){
+                return true;
+            }
+        }
+        return false;
     }
 
     function isValidTime(){
@@ -66,11 +61,18 @@
         // show schedule message when time is invalid
     }
 
-    function isVoted($table){
+    function isVoted($conn){
         // check if user has already voted
-        // $_SESSION['grade_level']
+        $stud_id = $_SESSION['student_id'];
+        $table = $conn->query("SELECT * FROM student WHERE student_id = $stud_id");
+        $poss = $table->fetch_assoc();
         // see if login already has voter info
-        return false;
+        if($poss['voting_status'] == 1){
+            return true;
+        }
+        else{
+            return false;
+        }
     }
 
     function isValidUser($conn){  // checks if user is registered
@@ -87,10 +89,6 @@
         }
     }
 
-    function isNotRepeated(){
-        // checks if voter has voted already
-        return true;
-    }
 
     function slugify($string){
         $preps = array('in', 'at', 'on', 'by', 'into', 'off', 'onto', 'from', 'to', 'with', 'a', 'an', 'the', 'using', 'for');
