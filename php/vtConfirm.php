@@ -1,123 +1,71 @@
-<?php
+<!DOCTYPE html>
+<html>
+    <head>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" type="text/css" href="..css/bootstrap.css">
+      <link rel="stylesheet" type="text/css" href="..css/bootstrap.min.css">
+      <link rel="stylesheet" type="text/css" href="..css/styles.css">
+      <script src="..js/bootstrap.js"></script>
+      <script src="..js/bootstrap.min.js"></script>
+    </head>
 
-	// ordinary variable na pinangalanan kong cookied
-	$cookied = array('10','11', '12','13','14');
-	// $data = array('email'=>'test@test.com',
-	// array("php","mysql"),
-	// 'age'=>28);
+  
+  <body>
+  
+    <!-- Trigger/Open The Modal -->
+    <!-- <button id="vote-button">Submit</button> -->
 
-	// code para malagay sa isang array $data lahat ng info
-	// sample coode pang fetch galing sa form
-	for($i = 0; $i <5; $i++){
-		$data[$i] = $cookied[$i];
-		echo $data[$i]."<br>";
-	}
-	// ilagay sa url ang laman ng array $data
-	echo "<a href='vtConfirm.php?" . http_build_query($data) . "'>next page</a><br>";
+    <!-- The Modal -->
+    <div id="confirmation" class="F-modal">
+    <!-- Modal content -->
+    <div class="F-modal-content">
+        <div class="F-modal-header">
+        <h2>VOTE PREVIEW</h2>
+        </div>
+        <div class="F-modal-body">
+            <div class="F-show-votes">
+                <p>Voter: <a href="#" id="VoterName"><?php echo $_SESSION['fname'].' '. $_SESSION['lname']?></a></p>
+                <div class="display-votes">
+                  <?php
+                    mysqli_data_seek($table, 0);
+                    $heir_id = 0;
+                    echo'    <div>';
+                    $counter = 0;
+                    while($poss = $table->fetch_assoc()){   // loop through all positions
+                        if(($poss["vote_allow"] == 0 && $_SESSION['grade_level'] == $poss["grade_level"]) || $poss["vote_allow"] == 1){
+                            // position div
+                            if($heir_id != $poss["heirarchy_id"]){
+                                $heir_id = $poss["heirarchy_id"];
+                                // echo position
+                                echo 
+                                '<tr id="display-vote-info">
+                                  <td id="F-preview-Position">'.$poss["position_name"].':</td>
+                                  <td id="F-preview-CandidateName"><span id = "'.$poss["heirarchy_id"].'">Abstain</span></td>
+                                </tr>
+                                <br>';
+                            // end of position div 
+                            }
+                            $counter++;
+                        }
+                    }
+                    echo'    </div>';
+                  ?>
+                    <!-- <tr id="display-vote-info">
+                      <td id="F-preview-Position">Position:</td>
+                      <td id="F-preview-CandidateName">Candidate Name</td>
+                    </tr>
+                    <br> -->
 
-	// echo $_GET['email']; echo "<br />";
-	// kunin ang values ng array na nasa loob ng url
-	for($i = 0; $i <5; $i++){
-		$data[$i] = $cookied[$i];
-		// echo $data[$i]."<br>";
-		echo $_GET[$i]; echo "<br />";
-	}
-	echo $_GET[0]; echo "<br />";
-	// echo $_GET['age']; echo "<br />";
-
-
-	// include "connect.php";
-	// // $tables = $GLOBALS["table"];
-
-	// // get selection from ballot
-	// $total = 0;
-	// while($poss = $table->fetch_assoc()){
-	// 	$total = $poss['heirarchy_id']; 
-	// }
-	// for($ctr = 1; $ctr <= $total; $ctr++){
-	// 	// if(($poss["vote_allow"] == 0 && $_SESSION['grade_level'] == $poss["grade_level"]) || $poss["vote_allow"] == 1)
-	// 	if(isset($_POST[$ctr])){
-	// 		// echo "<script>alert('".$_POST[$ctr]."');</script>";
-	// 		mysqli_data_seek($table, 0);
-	// 		while($poss = $table->fetch_assoc()){
-	// 			if(($poss["vote_allow"] == 0 && $_SESSION['grade_level'] == $poss["grade_level"]) || $poss["vote_allow"] == 1){
-	// 				if($poss['candidate_id'] == $_POST[$ctr]){
-	// 					echo $poss['fname']." ". $poss['lname']."<br>"; 
-	// 				}
-	// 				else if($_POST[$ctr] == "Abstain"){
-	// 					echo "Abstain <br>";
-	// 				}
-	// 			}
-	// 		}
-	// 	}
-	// 	else{
-	// 	}
-	// }
-
-	// header();
-	// echo ;
-
-
-
-	// function showChoices(){
-	// 	$positions = $conn->query("SELECT * FROM candidate_position ORDER BY heirarchy_id"); // get positions
-	// 	while($poss = $positions->fetch_assoc()){
-	// 		// if(($poss["vote_allow"] == 0 && $vote_glvl == $poss["grade_level"]) || $poss["vote_allow"] == 1){
-	// 			$heir_id = $poss["heirarchy_id"];
-	// 			// sanitize
-	// 			$choice = sanitize($_POST[$heir_id]);
-				
-	// 			echo $choice;
-	// 			echo '<tr id="display-vote-info">
-	// 				<td id="F-preview-Position">'.$poss["position_name"].'</td>
-	// 				<td id="F-preview-CandidateName">'.$fname.' '.$lname.'</td>
-	// 			</tr>
-	// 			<br>';
-	// 		// }
-	// 	}
-	// }
-
-
-    // global $output;
-	// while($row = $positions->fetch_assoc()){
-	// 	$position = slugify($row['description']);
-	// 	$pos_id = $row['id'];
-	// 	if(isset($_POST[$position])){
-	// 		if($row['max_vote'] > 1){
-	// 			if(count($_POST[$position]) > $row['max_vote']){
-	// 				$output['error'] = true;
-	// 				$output['message'][] = '<li>You can only choose '.$row['max_vote'].' candidates for '.$row['description'].'</li>';
-	// 			}
-	// 			else{
-	// 				foreach($_POST[$position] as $key => $values){
-	// 					$cmrow = $cmquery->fetch_assoc();
-	// 					$output['list'] .= "
-	// 						<div class='row votelist'>
-	// 	                      	<span class='col-sm-4'><span class='pull-right'><b>".$row['description']." :</b></span></span> 
-	// 	                      	<span class='col-sm-8'>".$cmrow['fname']." ".$cmrow['lname']."</span>
-	// 	                    </div>
-	// 					";
-	// 				}
-
-	// 			}
-				
-	// 		}
-	// 		else{
-	// 			$candidate = $_POST[$position];
-	// 			$csrow = $csquery->fetch_assoc();
-	// 			$output['list'] .= "
-	// 				<div class='row votelist'>
-    //                   	<span class='col-sm-4'><span class='pull-right'><b>".$row['description']." :</b></span></span> 
-    //                   	<span class='col-sm-8'>".$csrow['fname']." ".$csrow['lname']."</span>
-    //                 </div>
-	// 			";
-	// 		}
-
-	// 	}
-		
-	// }
-
-	// echo json_encode($output);
-
-
-?>
+                </div>
+            </div>
+            <br>
+            <p>Your votes are about to be submitted. Are you sure?</p>
+        </div>
+        <div class="F-modal-button">
+            <button type="button" id="return-button" class="F-returnBTN"><span>Return to Voting</span></button>
+            <button type="submit" name = "confirm-button" id="confirm-button" class="F-confirmBTN"><span>Confirm Submission</span></button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

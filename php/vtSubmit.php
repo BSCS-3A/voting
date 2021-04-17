@@ -1,6 +1,6 @@
 <?php
 	require "connect.php";
-	require "vtSanVal.php";
+	require "vtValSan.php";
 
 	mysqli_data_seek($table, 0);
 	$stud_id = $_SESSION['student_id'];
@@ -14,9 +14,9 @@
 				$choice = 0;
 			}
 			else{
-				// $choice = cleanInput($_POST[$poss['heirarchy_id']]);
 				// insert sanitation and validation function here
-				$choice = $_POST[$poss['heirarchy_id']];
+				$choice = cleanInput($_POST[$poss['heirarchy_id']]);
+				// $choice = $_POST[$poss['heirarchy_id']];
 			}
 			
 			$candidate = $poss['candidate_id'];

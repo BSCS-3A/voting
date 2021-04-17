@@ -16,31 +16,19 @@
 
 <body>
     <?php
-    // info: 
-    // php uses name
-    // css uses class
-    // js uses id
         require 'connect.php'; // Remove this when compiling
         include 'navstudent.php';
-        require 'vtSanVal.php';
+        require 'vtValSan.php';
         // insert ajax here (jquery)
         // for automatic time based access control
         require 'vtFetch.php';
-        // require 'php/vtConfirm.php';
-        // require 'vtSubmit.php';
     ?>
 
     <header id="F-header" style="text-align:center"><b>STUDENT LEADER ELECTION</b></header><br>
 
     <main>
         <!--Candidates-->
-        <form id = "main-form" method="POST" action = "
-        <?php 
-        // echo 'vtConfirm.php'; 
-        // echo 'vtPreview.php';
-        echo 'vtSubmit.php';
-        // echo htmlspecialchars($_SERVER["PHP_SELF"])."?id=2";
-        ?>" class="vtBallot" id="vtBallot">
+        <form id = "main-form" method="POST" action = "vtSubmit.php" class="vtBallot" id="vtBallot">
         <div id="voting-page">
                <?php
                     if(isValidTime()){// Not yet implemented
@@ -65,7 +53,7 @@
      <br>
 
     <?php
-        include '../html/footer.html';
+        // include '../html/footer.html';
     ?>
     <script src = "../js/modals.js"></script>
  </body>
