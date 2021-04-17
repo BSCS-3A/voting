@@ -1,20 +1,22 @@
 <?php
 	require "connect.php";
 	require "vtSanVal.php";
-	mysqli_data_seek($table, 0);
 
-	$counter = 0;
-	$votes = array(array());
+	mysqli_data_seek($table, 0);
+	$stud_id = $_SESSION['student_id'];
 	$status = "";
 	while($poss = $table->fetch_assoc()){   // loop through all positions
 		echo $poss["position_name"].": ".$poss["fname"].$poss["lname"]; // 
 		
 		if(($poss["vote_allow"] == 0 && $_SESSION['grade_level'] == $poss["grade_level"]) || $poss["vote_allow"] == 1){
 			if(empty($_POST[$poss['heirarchy_id']])){
+				// insert sanitation and validation function here
 				$choice = 0;
 			}
 			else{
-				$choice = sanitize($_POST[$poss['heirarchy_id']]);
+				// $choice = cleanInput($_POST[$poss['heirarchy_id']]);
+				// insert sanitation and validation function here
+				$choice = $_POST[$poss['heirarchy_id']];
 			}
 			
 			$candidate = $poss['candidate_id'];
@@ -32,20 +34,15 @@
 			echo "Abstain <br>";
 			$status = "Abstain";
 		}
-		// add to array
-		// $votes = array(NULL, $poss['student_id'], $poss['candidate_id'], $status, 'current_timestamp()');
 
-		$stud_id = $_SESSION['student_id'];
+		
+		// // send vote table
 		$cand_id = $poss['student_id'];
-		$conn->query("INSERT INTO `vote` (`vote_log_id`, `student_id`, `candidate_id`, `status`, `time_stamp`) VALUES (NULL, $stud_id, '16', 'Voted', current_timestamp())");
-
+		$conn->query("INSERT INTO `vote` (`vote_log_id`, `student_id`, `candidate_id`, `status`, `time_stamp`) VALUES (NULL, $stud_id, $cand_id, '$status', current_timestamp())");
 	}
 
-	// // send vote table
-	// $sqlVotes = serialize($votes);
-	// $conn->query("INSERT INTO `vote` (`vote_log_id`, `student_id`, `candidate_id`, `status`, `time_stamp`) VALUES ($sqlVotes)");
-
 	// update voter's status
+	$conn->query("UPDATE `student` SET `voting_status` = true WHERE `student`.`student_id` = '$stud_id'");
 	// generate reciept
 	// show receipt
 
