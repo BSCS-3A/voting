@@ -2,18 +2,20 @@
     // convert values to acceptable data types
     function fixDataType($data){
         $data = trim($data);
+        $data = cleanInput($data);
         $data = stripslashes($data);
         $data = htmlspecialchars($data);
+        $data = intval($data);
         if(is_int($data)){
             return $data;
         }
         else{
-            $page = $_SERVER['PHP_SELF'];
+            $page = "vtBallot.php";
             $sec = "0";
             // inseert sending message to admin about tampered data
-            header("Refresh: $sec; url=$page");
+            header("url=$page");
         }
-    }
+    }  
 
     // remove malicious bits
     function cleanInput($input) {
@@ -25,6 +27,7 @@
         );
     
         $output = preg_replace($search, '', $input);
+        $output = fixDataType($output);
         return $output;
     }
 

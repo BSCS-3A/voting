@@ -13,7 +13,7 @@
 
     }
     function showAbstain($poss){
-        echo'<label class="checkbox"><input type="radio" name="'.$poss["heirarchy_id"].'"  id="vote" value = "Abstain" onclick="document.getElementById(\''.$poss["heirarchy_id"].'\').innerHTML = \'Abstain\'"><span class="checkmark"></span><b> Abstain </b></label></div>';
+        echo'<label class="checkbox"><input type="radio" name="'.$poss["heirarchy_id"].'"  id="vote" value = "0" onclick="document.getElementById(\''.$poss["heirarchy_id"].'\').innerHTML = \'Abstain\'"><span class="checkmark"></span><b> Abstain </b></label></div>';
     }
 
     function generateBallot($table){
