@@ -21,7 +21,7 @@
     // css uses class
     // js uses id
         require 'connect.php'; // Remove this when compiling
-        include '../html/navbar.html';
+        include 'navstudent.php';
         require 'vtSanVal.php';
         // insert ajax here (jquery)
         // for automatic time based access control
