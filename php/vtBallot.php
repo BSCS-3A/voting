@@ -36,7 +36,7 @@
                             if(!isVoted($table)){
                                 generateBallot($table);
                                 require 'vtConfirm.php';
-                                require 'vtReceipt.php';
+                                // require 'vtReceipt.php';
                             }
                         }
                         else{

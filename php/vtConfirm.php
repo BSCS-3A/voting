@@ -2,11 +2,11 @@
 <html>
     <head>
       <meta name="viewport" content="width=device-width, initial-scale=1">
-      <link rel="stylesheet" type="text/css" href="..css/bootstrap.css">
-      <link rel="stylesheet" type="text/css" href="..css/bootstrap.min.css">
-      <link rel="stylesheet" type="text/css" href="..css/styles.css">
-      <script src="..js/bootstrap.js"></script>
-      <script src="..js/bootstrap.min.js"></script>
+      <link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
+      <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
+      <link rel="stylesheet" type="text/css" href="../css/styles.css">
+      <script src="../js/bootstrap.js"></script>
+      <script src="../js/bootstrap.min.js"></script>
     </head>
 
   
