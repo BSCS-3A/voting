@@ -2,7 +2,7 @@
     // convert values to acceptable data types
     function fixDataType($data){
         $data = trim($data);
-        $data = cleanInput($data);
+        // $data = cleanInput($data);
         $data = stripslashes($data);
         $data = htmlspecialchars($data);
         $data = intval($data);
@@ -28,25 +28,10 @@
     
         $output = preg_replace($search, '', $input);
         $output = fixDataType($output);
+        // $output = mysql_real_escape_string($input)
         return $output;
     }
 
-    // Uses the function above, as well as adds slashes as to not screw up database functions.
-    function sanitize($input) {
-        if (is_array($input)) {
-            foreach($input as $var=>$val) {
-                $output[$var] = sanitize($val);
-            }
-        }
-        else {
-            if (get_magic_quotes_gpc()) {
-                $input = stripslashes($input);
-            }
-            $input  = cleanInput($input);
-            $output = mysql_real_escape_string($input);
-        }
-        return $output;
-    }
 
     function validate(){
         // return true if vote is valid, false if not

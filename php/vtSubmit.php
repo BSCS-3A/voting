@@ -9,7 +9,7 @@
 		echo $poss["position_name"].": ".$poss["fname"].$poss["lname"]; // 
 		
 		if(($poss["vote_allow"] == 0 && $_SESSION['grade_level'] == $poss["grade_level"]) || $poss["vote_allow"] == 1){
-			if(empty($_POST[$poss['heirarchy_id']])){
+			if(empty(($_POST[$poss['heirarchy_id']]))){
 				// insert sanitation and validation function here
 				$choice = 0;
 			}

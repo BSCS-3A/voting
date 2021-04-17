@@ -35,7 +35,7 @@
                         if(isValidUser($conn)){
                             if(!isVoted($table)){
                                 generateBallot($table);
-                                require 'vtPreview.php';
+                                require 'vtConfirm.php';
                                 require 'vtReceipt.php';
                             }
                         }
