@@ -50,12 +50,6 @@
                     }
                     echo'    </div>';
                   ?>
-                    <!-- <tr id="display-vote-info">
-                      <td id="F-preview-Position">Position:</td>
-                      <td id="F-preview-CandidateName">Candidate Name</td>
-                    </tr>
-                    <br> -->
-
                 </div>
             </div>
             <br>
