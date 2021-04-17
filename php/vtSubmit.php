@@ -5,17 +5,20 @@
 	echo'    <div>';
 	$counter = 0;
 	while($poss = $table->fetch_assoc()){   // loop through all positions
-		$choice = $_POST['1'];
+		$choice = $_POST[$poss['candidate_id']];
 		$candidate = $poss['candidate_id'];
 		echo $poss["position_name"].": ".$poss["fname"].$poss["lname"];
 		if($poss['candidate_id'] == $choice){
 			$conn->query("UPDATE candidate SET total_votes = total_votes + 1 WHERE candidate.candidate_id = $candidate");
+			$conn->query("");
+			
 			echo "Voted <br>";
 		}
 		else{
 			echo "Abstain <br>";
 		}
 	}
+	
 	// // echo "Candidates: <br>"; // remove
 	// if(isset($_POST['confirm-button'])){
 	// 	// echo "Blah"; 	// remove
