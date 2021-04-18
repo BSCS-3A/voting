@@ -80,7 +80,14 @@
 
     function isVoted($table){
         // check if user has already voted
+<<<<<<< Updated upstream:php/vtSanVal.php
         // $_SESSION['grade_level']
+=======
+        $stud_id = $_SESSION['student_id'];
+        $voter = $conn->query("SELECT * FROM student WHERE student_id = $stud_id");
+        $poss = $voter->fetch_assoc();
+        echo $poss['student_id'];
+>>>>>>> Stashed changes:php/vtValSan.php
         // see if login already has voter info
         return false;
     }
