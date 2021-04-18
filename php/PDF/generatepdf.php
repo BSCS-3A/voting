@@ -1,6 +1,6 @@
 <?php
-require 'config.php';
-require 'connect.php';
+require '../connect.php';
+// require 'connect.php';
 // Include the main TCPDF library (search for installation path).
 require_once('TCPDF-main/tcpdf.php');
 
@@ -61,14 +61,15 @@ ob_start();
 	//date generated
 	date_default_timezone_set("Asia/Manila");
 	$today=date("F j, Y");	
-	$acadyear=date("Y");
+	$acadyear1 = date("Y");
+	$acadyear2 = $acadyear1 + 1;
 
 
 		$pdf->Ln(30); //font name size style
 		$pdf->SetFont('times','B',13);
 		$pdf->Multicell(178,2, 'OFFICIAL BALLOT RECEIPT',0,'C',0,1,'','',true); 
 		$pdf->SetFont('times','',12);
-		$pdf->Multicell(178,2, 'BICOL UNIVERSITY INTEGRATED LABORATORY SCHOOL (BUCEILS) SUPREME STUDENT GOVERNMENT (SSG) ELECTION FOR A.Y. '.$acadyear.'-'.$acadyear + 1,0,'C',0,1,'','',true); 
+		$pdf->Multicell(178,2, 'BICOL UNIVERSITY INTEGRATED LABORATORY SCHOOL (BUCEILS) SUPREME STUDENT GOVERNMENT (SSG) ELECTION FOR A.Y. '.$acadyear1.'-'.$acadyear2.'',0,'C',0,1,'','',true); 
 
 		$pdf->Ln(5);
 		$pdf->SetFont('times','',12);
@@ -147,4 +148,4 @@ ob_start();
 
 
 // Close and output PDF document
-$pdf->Output('Official Ballot Receipt.pdf', 'I'); 
+$pdf->Output('Official Ballot Receipt.pdf', 'I');  
