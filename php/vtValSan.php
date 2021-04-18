@@ -61,13 +61,12 @@
         // show schedule message when time is invalid
     }
 
-    function isVoted($conn){
+    function isVoted($stud_id){
         // check if user has already voted
-        $stud_id = $_SESSION['student_id'];
-        $table = $conn->query("SELECT * FROM student WHERE student_id = $stud_id");
-        $poss = $table->fetch_assoc();
+        $stat_que = $conn->query("SELECT vote_status FROM student WHERE student_id = $stud_id");
+        $stat = $stat_que->fetch_assoc();
         // see if login already has voter info
-        if($poss['voting_status'] == 1){
+        if($stat == 1){
             return true;
         }
         else{
