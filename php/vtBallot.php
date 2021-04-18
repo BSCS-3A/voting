@@ -33,10 +33,13 @@
                <?php
                     if(isValidTime()){// Not yet implemented
                         if(isValidUser($conn)){
-                            if(!isVoted($_SESSION['student_id'])){
+                            if(!isVoted($conn)){
                                 generateBallot($table);
                                 require 'vtConfirm.php';
                                 // require 'vtReceipt.php';
+                            }
+                            else{
+                                // already voted
                             }
                         }
                         else{
