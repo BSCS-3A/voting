@@ -1,30 +1,57 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" type="text/css" href="../css/styles.css">
-  </head>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta charset="utf-8">
+    <link rel="icon" href="../img/BUHS LOGO.png" type="image/png">
+    <link rel="stylesheet" href="../css/bootstrap.css">
+    <link rel="stylesheet" href="../css/font-awesome.css">
+    <link rel="stylesheet" type="text/css" href="../css/layout.css">
+    <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <title>Download receipt</title>
+</head>
 
-  <body>
-    <!-- Trigger/Open The Modal -->
-    <!-- <button id="confirm">Confirm Submission</button> -->
+<body>
+    <?php
+        include 'navstudent.php';
+    ?>
+    <header id="F-header" style="text-align:center"><b>VOTE RECEIPT</b></header><br>
 
-    <!-- The Modal -->
-    <div id="receipt" class="F-modal">
-
-      <!-- Modal content -->
-        <div class="F-modal-content">
-          <div class="F-modal-header">
-          </div>
-          <div class="F-modal-body">
-            <p>Your vote has been successfully casted. Here's the copy of your votes.</p>
-          </div>
-          <div class="F-modal-button">
-            <button type="button" id="receipt-button" class="F-downloadReceiptBTN">Download Receipt</button>
-            <button type="button" id="gotoHome-button" class="F-goToHomeBTN">Go to Home</button>
-          </div>
+    <main>
+      <div id="download-receipt-page" class="F-download-receipt-page">
+        <!--DIV container only for PHP file
+        <div id="receipt-preview" class="F-receipt-preview">
+        </div> -->
+        <div id="receipt-page-buttons" class="F-receipt-page-buttons">
+          <button type="button" class="F-downloadReceiptBTN" id="dl-receipt">Download Receipt</button>
+          <button type="button" class="F-goToHomeBTN" id="gt-home">Go to Home</button>
         </div>
-    </div>
-  </body>
+      </div>
+    </main>
+
+    <script>
+      // Get Download Receipt button
+      var download = document.getElementById("dl-receipt");
+
+      // Get Home button
+      var home = document.getElementById("gt-home");
+
+      download.onclick = function() {
+        location.href = "PDF/generatepdf.php";
+      }
+
+      home.onclick = function() {
+        location.href = "/*Dashboard*/";
+      }
+
+    </script>
+
+    
+    <?php
+        include '../html/footer.html';
+    ?>
+</body>
+
 </html>
