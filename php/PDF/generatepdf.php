@@ -1,5 +1,5 @@
 <?php
-require '../connect.php';
+// require '../connect.php';
 // require 'connect.php';
 // Include the main TCPDF library (search for installation path).
 require_once('TCPDF-main/tcpdf.php');
@@ -109,7 +109,8 @@ ob_start();
 	$pdf->Cell(180,10,'SUMMARY OF YOUR VOTES',1,0,'C',0);
 	$pdf->Cell(60,10,'',0,0); //spacer
 	$pdf->Cell(60,10,'',0,1); //spacer
-	$vote_que = $conn->query("SELECT * FROM (((vote INNER JOIN candidate ON vote.candidate_id = candidate.candidate_id)INNER JOIN student ON candidate.student_id = student.student_id) INNER JOIN candidate_position ON candidate.position_id = candidate_position.position_id) WHERE vote.student_id = $_SESSION['student_id'] ORDER BY candidate_position.heirarchy_id");
+	$stud_id = $_SESSION['student_id'];
+	$vote_que = $conn->query("SELECT * FROM (((vote INNER JOIN candidate ON vote.candidate_id = candidate.candidate_id)INNER JOIN student ON candidate.student_id = student.student_id) INNER JOIN candidate_position ON candidate.position_id = candidate_position.position_id) WHERE vote.student_id = $stud_id ORDER BY candidate_position.heirarchy_id");
 	while($voted = $vote_que->fetch_assoc()){
 		$candidate_name = $voted['fname'].' '.$voted['lname'];
 	$pdf->Cell(60,10,$voted['position_name'],1,0,'C');
