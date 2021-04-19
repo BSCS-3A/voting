@@ -27,9 +27,7 @@
       <div id="download-receipt-page" class="F-download-receipt-page">
         <!-- DIV container only for PHP file -->
         <div id="receipt-preview" class="F-receipt-preview">
-          <!-- < ?php 
-            require "PDF/generatepdf.php";
-          ?> -->
+          <!-- insert table here -->
         </div>
         <div id="receipt-page-buttons" class="F-receipt-page-buttons">
           <button type="button" class="F-downloadReceiptBTN" id="dl-receipt">Download Receipt</button>
