@@ -28,7 +28,7 @@
 
     <main>
         <!--Candidates-->
-        <form id = "main-form" method="POST" action = "vtSubmit.php" class="vtBallot" id="vtBallot">
+        <form id = "main-form" method="POST" action = "vtReceipt.php" class="vtBallot" id="vtBallot">
         <div id="voting-page">
                <?php
                     if(isValidTime()){// Not yet implemented
@@ -47,16 +47,16 @@
                         }
                     }
                 ?>
-                <!-- <form method = "POST" action = "vtPreview.php"> -->
-                    <div id="vote-button"><button id="vote-btn" name = "vote-button" class="btn" type = "button">SUBMIT</button></div>
-                <!-- </form> -->
         </div>
+        <!-- <form method = "POST" action = "vtPreview.php"> -->
+            <div id="vote-button"><button id="vote-btn" name = "vote-button" class="btn" type = "button">SUBMIT</button></div>
+        <!-- </form> -->
         </form>
      </main>
      <br>
 
     <?php
-        // include '../html/footer.html';
+        include '../html/footer.html';
     ?>
     <script src = "../js/modals.js"></script>
  </body>
