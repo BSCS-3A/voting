@@ -1,7 +1,4 @@
 <?php
-	require "connect.php";
-	require "vtValSan.php";
-
 	mysqli_data_seek($table, 0);
 	$stud_id = $_SESSION['student_id'];
 	$status = "";
@@ -38,15 +35,13 @@
 
 		
 		// // send vote table
-		$cand_id = $poss['student_id'];
+		$cand_id = $poss['candidate_id'];
 		$conn->query("INSERT INTO `vote` (`vote_log_id`, `student_id`, `candidate_id`, `status`, `time_stamp`) VALUES (NULL, $stud_id, $cand_id, '$status', current_timestamp())");
 	}
 
 	// update voter's status
 	$conn->query("UPDATE `student` SET `voting_status` = true WHERE `student`.`student_id` = '$stud_id'");
-	// generate reciept
-	// show receipt
-
+	// generate reciept & show receipt
 
 
 	
