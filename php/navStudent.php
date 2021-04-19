@@ -78,9 +78,9 @@
     </footer> -->
 
 
-    <div class="footer">
+    <!-- <div class="footer">
         <p class="footer-txt">BS COMPUTER SCIENCE 3A © 2021</p>
-    </div>
+    </div> -->
 
     <!--End of Footer-->
 
