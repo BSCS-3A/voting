@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="../css/bootstrap.css">
     <link rel="stylesheet" href="../css/font-awesome.css">
     <link rel="stylesheet" type="text/css" href="../css/layout.css">
+    <link rel="stylesheet" type="text/css" href="../css/style.css">
     <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
     <title>Download receipt</title>
@@ -16,14 +17,20 @@
 <body>
     <?php
         include 'navstudent.php';
+        require "connect.php";
+	      require "vtValSan.php";
+        require "vtSubmit.php";
     ?>
     <header id="F-header" style="text-align:center"><b>VOTE RECEIPT</b></header><br>
 
     <main>
       <div id="download-receipt-page" class="F-download-receipt-page">
-        <!--DIV container only for PHP file
+        <!-- DIV container only for PHP file -->
         <div id="receipt-preview" class="F-receipt-preview">
-        </div> -->
+          <!-- < ?php 
+            require "PDF/generatepdf.php";
+          ?> -->
+        </div>
         <div id="receipt-page-buttons" class="F-receipt-page-buttons">
           <button type="button" class="F-downloadReceiptBTN" id="dl-receipt">Download Receipt</button>
           <button type="button" class="F-goToHomeBTN" id="gt-home">Go to Home</button>
