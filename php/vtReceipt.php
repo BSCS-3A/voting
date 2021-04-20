@@ -24,9 +24,10 @@
     <header id="F-header" style="text-align:center"><b>VOTE RECEIPT</b></header><br>
 
     <main>
-      <div id="download-receipt-page" class="F-download-receipt-page">			
-				<div id="election-finished-msg" class="error-message">
-          <div id="F-receipt-message" class="F-receipt-message">
+      <!-- <div id="download-receipt-page" class="F-download-receipt-page">			
+				<div id="election-finished-msg" class="error-message"> -->
+          <!-- <div id="F-receipt-message" class="F-receipt-message"> -->
+          <div id="error-message-container" style = "margin-top: 5%;" class="error-message-container">		<div id="election-finished-msg" class="error-message">
             <!-- insert message here -->
             <?php
               if(isValidUser($conn)){
@@ -47,10 +48,12 @@
             }
             ?>
           </div>
-          <div id="receipt-page-buttons" class="F-receipt-page-buttons">
+          <div id="receipt-page-buttons" style = "margin-bottom: 5%;" class="F-receipt-page-buttons">
             <button type="button" class="F-downloadReceiptBTN" id="dl-receipt">Download Receipt</button>
             <button type="button" class="F-goToHomeBTN" id="gt-home">Go to Home</button>
-          </div>
+            <!-- </div>
+            </div>   -->
+          <!-- </div> -->
         </div>
       </div>
     </main>
