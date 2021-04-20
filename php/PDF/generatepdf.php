@@ -131,6 +131,7 @@ ob_start();
 	// while($voted = $vote_que->fetch_assoc()){
 	// 	$candidate_name = $voted['fname'].' '.$voted['lname'];
 	// } 
+	
 	// $pdf->Cell(60,10,'Vice President',1,0,'C');
 	// $pdf->Cell(60,10,'',1,0,'C',0);
 	// $pdf->Cell(60,10,'',1,0,'C',0);
