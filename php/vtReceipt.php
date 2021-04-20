@@ -24,7 +24,7 @@
 
     <main>
       <div id="download-receipt-page" class="F-download-receipt-page">
-        <!-- DIV container only for PHP file -->
+      <div id="error-message-container" class="error-message-container">
         <div id="F-receipt-message" class="F-receipt-message">
           <!-- insert message here -->
           <?php
@@ -51,6 +51,7 @@
           <button type="button" class="F-goToHomeBTN" id="gt-home">Go to Home</button>
         </div>
       </div>
+        </div>
     </main>
 
     <script>
