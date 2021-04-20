@@ -19,29 +19,31 @@
         include 'navstudent.php';
         require "connect.php";
 	      require "vtValSan.php";
-        if(isValidTime()){// Not yet implemented
-          if(isValidUser($conn)){
-              if(!isVoted($conn)){
-                  require "vtSubmit.php";
-              }
-              else{
-                  // already voted
-              }
-          }
-          else{
-              // destroy session and return to login
-          }
-      }
     ?>
     <header id="F-header" style="text-align:center"><b>VOTE RECEIPT</b></header><br>
 
     <main>
       <div id="download-receipt-page" class="F-download-receipt-page">
         <!-- DIV container only for PHP file -->
-        <div id="receipt-preview" class="F-receipt-preview">
+        <div id="F-receipt-message" class="F-receipt-message">
           <!-- insert message here -->
           <?php
-            recieptMessage($conn);
+            if(isValidUser($conn)){
+              if(isValidTime()){// Not yet implemented
+                if(!isVoted($conn)){
+                  require "vtSubmit.php";
+                  echo "<h4>Your votes were submitted successfully! Here is a copy of your receipt</h4>";
+                }
+                else{ // Already Voted
+                    echo "<h4>You have already cast your votes.</h4>";
+                }
+              }
+            }
+            else{ // Invalid user; destroy session and return to login
+              session_unset();    // remove all session variables
+              session_destroy();  // destroy session
+              header("Location: ../index.php");
+          }
           ?>
         </div>
         <div id="receipt-page-buttons" class="F-receipt-page-buttons">
@@ -67,11 +69,6 @@
       }
 
     </script>
-
-    
-    <?php
-        include '../html/footer.html';
-    ?>
 </body>
 
 </html>

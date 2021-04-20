@@ -52,10 +52,6 @@
         ?>
      </main>
      <br>
-
-    <?php
-        include '../html/footer.html';
-    ?>
     <script src = "../js/modals.js"></script>
  </body>
 

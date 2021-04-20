@@ -7,7 +7,7 @@
 }
 
 body{  
-  font-family: Roboto,Roboto Thin,Generica, sans-serif;  
+  font-family: Roboto,Roboto Thin,Generica, Roboto Light, sans-serif;  
   background-image: url("img/studentBG.png");
   background-size: cover;
   font-size: 100%;
@@ -323,22 +323,13 @@ nav img.Auser-profile{
 }
 
 
-/* footer{
+/* ADDITIONAL CSS for Vote Receipt */
+.receipt-footer{
   background-color: #fece4b;
   position: absolute;
   bottom: 0;
   width: 100%;
   height: 5%;
-  clear: both;
-  text-align: center;
-  padding: 5px 0px;
-  letter-spacing: 7px;
-} */
-footer{
-  background-color: #fece4b;
-  position: relative;
-  height: 5%;
-  margin-top: auto;
   clear: both;
   text-align: center;
   padding: 5px 0px;
@@ -350,29 +341,25 @@ footer{
   width: 100%
 }
 
-.F-receipt-container{
+.F-receipt-message{
   padding: 30px;
   margin: auto;
   justify-content: center;
   width: 50%;
   margin-left: auto;
   margin-right: auto;
+  margin-top: 2%;
 }
-/* CSS for DIV of php file
-/*.F-receipt-preview {
-  border: 1px solid black;
-  width: 70%;
-  height: auto;
-  margin: auto;
-  align-items: center;    
-  margin-top: 5%;
-  margin-bottom: 5%;
-} */
+
+.F-receipt-message h4{
+  text-align: center;
+  font-family: Roboto Light, sans-serif;
+}
 
 .F-receipt-page-buttons {
   text-align: center;
   justify-content: center;
-  margin-top: 5%;
+  margin-top: 2%;
 }
 
 /* Go to Home Button */
@@ -404,7 +391,7 @@ footer{
 
 
 @media (max-width: 1200px){
-  .F-receipt-container{
+  .F-receipt-message{
     min-width: 65%;
   }
 }
