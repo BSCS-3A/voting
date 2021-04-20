@@ -40,6 +40,9 @@
                       echo "<h3>You have already voted Here is a copy of your vote receipt.</h3>";
                   }
                 }
+                else{
+                  // error messages for invalid time
+                }
               }
               else{ // Invalid user; destroy session and return to login
                 session_unset();    // remove all session variables

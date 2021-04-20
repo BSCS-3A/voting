@@ -3,7 +3,7 @@
 	$stud_id = $_SESSION['student_id'];
 	$status = "";
 	while($poss = $table->fetch_assoc()){   // loop through all positions
-		echo $poss["position_name"].": ".$poss["fname"].$poss["lname"]; // 
+		// echo $poss["position_name"].": ".$poss["fname"].$poss["lname"]; // 
 		
 		if(($poss["vote_allow"] == 0 && $_SESSION['grade_level'] == $poss["grade_level"]) || $poss["vote_allow"] == 1){
 			if(empty(($_POST[$poss['heirarchy_id']]))){
@@ -20,16 +20,16 @@
 			$candidate = $poss['candidate_id'];
 			if($poss['candidate_id'] == $choice){
 				$conn->query("UPDATE candidate SET total_votes = total_votes + 1 WHERE candidate.candidate_id = $candidate");		
-				echo "Voted <br>";
+				// echo "Voted <br>";
 				$status = "Voted";
 			}
 			else{
-				echo "Abstain <br>";
+				// echo "Abstain <br>";
 				$status = "Abstain";
 			}
 		}
 		else{
-			echo "Abstain <br>";
+			// echo "Abstain <br>";
 			$status = "Abstain";
 		}
 

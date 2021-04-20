@@ -224,7 +224,7 @@ body {
   .F-modal-button{
     display: flex;
     flex-direction: column;
-    margin-left: 22px;
+    margin-left: 20%;
   }
 }
 
@@ -232,4 +232,8 @@ body {
   .F-modal-content{
     min-width: 90%;
   }
+  F-modal-button{
+    display: flex;
+    flex-direction: column;
+    margin-left: 22px;
 }

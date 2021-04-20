@@ -291,7 +291,7 @@ nav img.Auser-profile{
 
 
 
-footer{
+/* footer{
   background-color: #fece4b;
   position: absolute;
   bottom: 0;
@@ -301,7 +301,7 @@ footer{
   text-align: center;
   padding: 5px 0px;
   letter-spacing: 7px;
-}
+} */
 
 
 .error-message-container{
@@ -315,8 +315,9 @@ footer{
 
 .error-message{
   font: Roboto Light, sans-serif;
-  margin-top: 5%;
-  margin-bottom: 5%;
+  margin: 5%;
+  /* margin-top: 5%;
+  margin-bottom: 5%; */
   text-align: center;
 }
 
