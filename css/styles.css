@@ -219,3 +219,17 @@ body {
   }
   
 }
+
+@media screen and (max-width: 540px){
+  .F-modal-button{
+    display: flex;
+    flex-direction: column;
+    margin-left: 22px;
+  }
+}
+
+@media screen and (max-width: 320px){
+  .F-modal-content{
+    min-width: 90%;
+  }
+}
