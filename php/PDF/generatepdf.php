@@ -111,13 +111,26 @@ ob_start();
 	$pdf->Cell(60,10,'',0,1); //spacer
 	$stud_id = $_SESSION['student_id'];
 	$vote_que = $conn->query("SELECT * FROM (((vote INNER JOIN candidate ON vote.candidate_id = candidate.candidate_id)INNER JOIN student ON candidate.student_id = student.student_id) INNER JOIN candidate_position ON candidate.position_id = candidate_position.position_id) WHERE vote.student_id = $stud_id ORDER BY candidate_position.heirarchy_id");
-	while($voted = $vote_que->fetch_assoc()){
-		$candidate_name = $voted['fname'].' '.$voted['lname'];
-	$pdf->Cell(60,10,$voted['position_name'],1,0,'C');
-	$pdf->Cell(60,10,$candidate_name,1,0,'C',0);
-	$pdf->Cell(60,10,$voted['party_name'],1,0,'C',0);
-	$pdf->Cell(60,10,'',0,1); //spacer
-	} 
+	
+	$heir_id = 0;
+	$counter = 0;
+	while($voted = $vote_que->fetch_assoc()){   // loop through all positions
+		if(($voted["vote_allow"] == 0 && $_SESSION['grade_level'] == $voted["grade_level"]) || $voted["vote_allow"] == 1){
+			if($heir_id != $voted["heirarchy_id"]){
+				$heir_id = $voted["heirarchy_id"];
+				$candidate_name = $voted['fname'].' '.$voted['lname'];
+				
+				$pdf->Cell(60,10,$voted['position_name'],1,0,'C');
+				$pdf->Cell(60,10,$candidate_name,1,0,'C',0);
+				$pdf->Cell(60,10,$voted['party_name'],1,0,'C',0);
+				$pdf->Cell(60,10,'',0,1); //spacer
+			}
+			$counter++;
+		}
+	}
+	// while($voted = $vote_que->fetch_assoc()){
+	// 	$candidate_name = $voted['fname'].' '.$voted['lname'];
+	// } 
 	// $pdf->Cell(60,10,'Vice President',1,0,'C');
 	// $pdf->Cell(60,10,'',1,0,'C',0);
 	// $pdf->Cell(60,10,'',1,0,'C',0);
