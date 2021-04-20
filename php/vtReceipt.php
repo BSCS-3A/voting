@@ -33,10 +33,10 @@
                 if(isValidTime()){// Not yet implemented
                   if(!isVoted($conn)){
                     require "vtSubmit.php";
-                    echo "<h3>Your votes were submitted successfully! Here is a copy of your receipt</h3>";
+                    echo "<h3>Your votes were submitted successfully! Here is a copy of your vote receipt</h3>";
                   }
                   else{ // Already Voted
-                      echo "<h3>You have already cast your votes.</h3>";
+                      echo "<h3>You have already voted Here is a copy of your vote receipt.</h3>";
                   }
                 }
               }
