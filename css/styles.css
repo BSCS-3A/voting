@@ -227,3 +227,9 @@ body {
     margin-left: 22px;
   }
 }
+
+@media screen and (max-width: 320px){
+  .F-modal-content{
+    min-width: 90%;
+  }
+}
