@@ -30,8 +30,19 @@
         <!--Candidates-->
         <?php
             if(isValidUser($conn)){
-                if(isValidTime()){// Not yet implemented
-                    if(!isVoted($conn)){
+                if(!isVoted($conn)){
+                    $sched_row = $conn->query("SELECT * FROM `vote_event` WHERE `vote_event_id` = 1");
+                    $sched = $sched_row->fetch_assoc();
+                    if(empty($sched)){
+                        echo "no sched";
+                    }
+                    else if(time() < $sched['start_date']){
+                        echo "not yet started";
+                    }
+                    else if(time() > $sched['end_date']){
+                        echo "already finished";
+                    }
+                    else if(time() > $sched['start_date'] && time() < $sched['end_date']){
                         echo '<form id = "main-form" method="POST" action = "vtReceipt.php" class="vtBallot" id="vtBallot"><div id="voting-page">';
                         generateBallot($table);
                         require 'vtConfirm.php';
@@ -39,9 +50,9 @@
                         echo '<div id="vote-button"><button id="vote-btn" name = "vote-button" class="btn" type = "button">SUBMIT</button></div>
                         </form>';
                     }
-                    else{ // Already Voted
-                        header("Location: vtReceipt.php");
-                    }
+                }
+                else{ // Already Voted
+                    header("Location: vtReceipt.php");
                 }
             }
             else{ // Invalid user; destroy session and return to login
