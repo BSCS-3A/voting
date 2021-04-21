@@ -39,13 +39,13 @@
                     $access_time = time();
 
                     if(empty($sched)){
-                        echo "no sched";
+                        header("Location: ../html/no_election_scheduled.html");
                     }
                     else if($access_time > $end_time){
-                        echo "already finished";
+                        header("Location: ../html/election_finished.html");
                     }
                     else if($access_time < $start_time){
-                        echo "not yet started";
+                        header("Location: ../html/election_not_yet_started.html");
                     }
                     else if($access_time >= $start_time && $access_time <= $end_time){
                         echo '<form id = "main-form" method="POST" action = "vtReceipt.php" class="vtBallot" id="vtBallot"><div id="voting-page">';
