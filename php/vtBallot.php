@@ -33,16 +33,21 @@
                 if(!isVoted($conn)){
                     $sched_row = $conn->query("SELECT * FROM `vote_event` WHERE `vote_event_id` = 1");
                     $sched = $sched_row->fetch_assoc();
+                    
+                    $start_time = strtotime($sched['start_date']);
+                    $end_time = strtotime($sched['end_date']);
+                    $access_time = time();
+
                     if(empty($sched)){
                         echo "no sched";
                     }
-                    else if(time() < $sched['start_date']){
-                        echo "not yet started";
-                    }
-                    else if(time() > $sched['end_date']){
+                    else if($access_time > $end_time){
                         echo "already finished";
                     }
-                    else if(time() > $sched['start_date'] && time() < $sched['end_date']){
+                    else if($access_time < $start_time){
+                        echo "not yet started";
+                    }
+                    else if($access_time >= $start_time && $access_time <= $end_time){
                         echo '<form id = "main-form" method="POST" action = "vtReceipt.php" class="vtBallot" id="vtBallot"><div id="voting-page">';
                         generateBallot($table);
                         require 'vtConfirm.php';
