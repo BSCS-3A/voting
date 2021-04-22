@@ -8,7 +8,7 @@
 
 body{  
   font-family: Roboto,Roboto Thin,Generica, Roboto Light, sans-serif;  
-  background-image: url("img/studentBG.png");
+  background-image: url("../img/studentBG.png");
   background-size: cover;
   font-size: 100%;
   background-attachment: fixed;
@@ -326,10 +326,9 @@ nav img.Auser-profile{
 /* ADDITIONAL CSS for Vote Receipt */
 .footer{
   background-color: #fece4b;
-  position: absolute;
-  bottom: 0;
-  width: 100%;
+  position: relative;
   height: 5%;
+  margin-top: auto;
   clear: both;
   text-align: center;
   padding: 5px 0px;

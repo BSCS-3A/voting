@@ -18,11 +18,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta charset="utf-8">
     <link rel="icon" href="../img/BUHS LOGO.png" type="image/png">
-    <!-- <link rel="stylesheet" href="../css/student_css/bootstrap_studDash.css"> -->
+    <link rel="stylesheet" href="../css/student_css/bootstrap_studDash.css">
     <link rel="stylesheet" href="../css/student_css/font-awesome_studDash.css">
-    <link rel="stylesheet" href="../css/layout.css">
-    <!-- <link rel="stylesheet" type="text/css" href="../css/student_css/style_studDash.css"> -->
-    <!-- <link rel="stylesheet" type="text/css" href="../css/student_css/style_studNav.css"> -->
+    <!-- <link rel="stylesheet" href="../css/style.css"> -->
+    <link rel="stylesheet" type="text/css" href="../css/student_css/style_studDash.css">
+    <link rel="stylesheet" type="text/css" href="../css/student_css/style_studNav.css">
     
     <title>BUCEILS HS Online Voting System</title>
 </head>
