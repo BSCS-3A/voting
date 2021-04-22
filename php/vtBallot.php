@@ -17,7 +17,7 @@
 <body>
     <?php
         require 'connect.php'; // Remove this when compiling
-        include 'navStudent.php';
+        include 'navstudent.php';
         require 'vtValSan.php';
         // insert ajax here (jquery)
         // for automatic time based access control
@@ -52,7 +52,7 @@
                         generateBallot($table);
                         require 'vtConfirm.php';
                         echo '</div>';
-                        echo '<div id="vote-button"><button id="vote-btn" name = "vote-button" class="vote-btn" type = "button">SUBMIT</button></div>
+                        echo '<div id="vote-button"><button id="vote-btn" name = "vote-button" class="btn" type = "button">SUBMIT</button></div>
                         </form>';
                     }
                 }
