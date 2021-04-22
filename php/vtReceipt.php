@@ -7,7 +7,7 @@
     <link rel="icon" href="../img/BUHS LOGO.png" type="image/png">
     <link rel="stylesheet" href="../css/bootstrap.css">
     <link rel="stylesheet" href="../css/font-awesome.css">
-    <!-- <link rel="stylesheet" type="text/css" href="../css/vote.css"> -->
+    <link rel="stylesheet" type="text/css" href="../css/vote.css">
     <!-- <link rel="stylesheet" type="text/css" href="../css/style.css"> -->
     <link rel="stylesheet" type="text/css" href="../css/messages.css">
     <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
