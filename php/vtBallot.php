@@ -35,16 +35,19 @@
                     $access_time = time();
 
                     if(empty($sched)){
-                        header("Location: ../html/no_election_scheduled.html");
-                        exit();
+                        errorMessage("No election has been scheduled");
+                        // header("Location: ../html/no_election_scheduled.html");
+                        // exit();
                     }
                     else if($access_time > $end_time){
-                        header("Location: ../html/election_finished.html");
-                        exit();
+                        errorMessage("Election is already finished");
+                        // header("Location: ../html/election_finished.html");
+                        // exit();
                     }
                     else if($access_time < $start_time){
-                        header("Location: ../html/election_not_yet_started.html");
-                        exit();
+                        errorMessage("Election has not yet started");
+                        // header("Location: ../html/election_not_yet_started.html");
+                        // exit();
                     }
                     else if($access_time >= $start_time && $access_time <= $end_time){
                         include 'navstudent.php';
@@ -59,6 +62,8 @@
                         echo '<div id="vote-button"><button id="vote-btn" name = "vote-button" class="vote-btn" type = "button">SUBMIT</button></div>
                         </form>';
                         echo '</main>';
+                        echo '<br>
+                        <script src = "../js/modals.js"></script>';
                     }
                 }
                 else{ // Already Voted
@@ -73,8 +78,6 @@
                 exit();
             }
         ?>
-     <br>
-    <script src = "../js/modals.js"></script>
  </body>
 
 </html>
