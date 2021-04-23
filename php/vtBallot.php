@@ -25,13 +25,7 @@
         // insert ajax here (jquery)
         // for automatic time based access control
         require 'vtFetch.php';
-    ?>
 
-    <header id="F-header" style="text-align:center"><b>STUDENT LEADER ELECTION</b></header><br>
-
-    <main>
-        <!--Candidates-->
-        <?php
             if(isValidUser($conn)){
                 if(!isVoted($conn)){
                     $sched_row = $conn->query("SELECT * FROM `vote_event` WHERE `vote_event_id` = 1");
@@ -51,6 +45,8 @@
                         header("Location: ../html/election_not_yet_started.html");
                     }
                     else if($access_time >= $start_time && $access_time <= $end_time){
+                        echo '<header id="F-header"  style="text-align: center;"><b>STUDENT LEADER ELECTION</b></header><br>';
+                        echo '<main>';
                         echo '<form id = "main-form" method="POST" action = "vtReceipt.php" class="vtBallot" id="vtBallot"><div id="voting-page">';
                         $table = $conn->query("SELECT * FROM ((candidate INNER JOIN student ON candidate.student_id = student.student_id) INNER JOIN candidate_position ON candidate.position_id = candidate_position.position_id) ORDER BY candidate_position.heirarchy_id"); // get positions
                         generateBallot($table);
@@ -58,6 +54,7 @@
                         echo '</div>';
                         echo '<div id="vote-button"><button id="vote-btn" name = "vote-button" class="vote-btn" type = "button">SUBMIT</button></div>
                         </form>';
+                        echo '</main>';
                     }
                 }
                 else{ // Already Voted
@@ -70,7 +67,6 @@
                 header("Location: ../index.php");
             }
         ?>
-     </main>
      <br>
     <script src = "../js/modals.js"></script>
  </body>
