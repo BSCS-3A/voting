@@ -20,6 +20,10 @@
         include 'navstudent.php';
         require "connect.php";
 	      require "vtValSan.php";
+        // if(!isset($_POST['confirm-button'])){
+        //   header("Location: vtBallot.php");
+        //   exit();
+        // }
     ?>
     <header id="F-header" style="text-align:center"><b>VOTE RECEIPT</b></header><br>
 
@@ -41,12 +45,15 @@
 
                     if(empty($sched)){
                         header("Location: ../html/no_election_scheduled.html");
+                        exit();
                     }
                     else if($access_time > $end_time){
                         header("Location: ../html/election_finished.html");
+                        exit();
                     }
                     else if($access_time < $start_time){
                         header("Location: ../html/election_not_yet_started.html");
+                        exit();
                     }
                     else if($access_time >= $start_time && $access_time <= $end_time){
                       require "vtSubmit.php";
@@ -61,6 +68,7 @@
               session_unset();    // remove all session variables
               session_destroy();  // destroy session
               header("Location: ../index.php");
+              exit();
             }
             ?>
           </div>
