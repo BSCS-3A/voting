@@ -452,3 +452,14 @@
     font-size: 10px;
     /* color: #ffffff; */
   }
+
+.footer{        /*for voting receipt and error messages */
+  background-color: #fece4b;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 5%;
+  clear: both;
+  text-align: center;
+  padding: 5px 0px;
+}
