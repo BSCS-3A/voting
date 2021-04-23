@@ -20,7 +20,6 @@
 <body>
     <?php
         require 'connect.php'; // Remove this when compiling
-        include 'navstudent.php';
         require 'vtValSan.php';
         // insert ajax here (jquery)
         // for automatic time based access control
@@ -45,6 +44,7 @@
                         header("Location: ../html/election_not_yet_started.html");
                     }
                     else if($access_time >= $start_time && $access_time <= $end_time){
+                        include 'navstudent.php';
                         echo '<header id="F-header"  style="text-align: center;"><b>STUDENT LEADER ELECTION</b></header><br>';
                         echo '<main>';
                         echo '<form id = "main-form" method="POST" action = "vtReceipt.php" class="vtBallot" id="vtBallot"><div id="voting-page">';
