@@ -55,7 +55,7 @@
                         echo '<main>';
                         echo '<form id = "main-form" method="POST" action = "vtReceipt.php" class="vtBallot" id="vtBallot"><div id="voting-page">';
                         $table = $conn->query("SELECT * FROM ((candidate INNER JOIN student ON candidate.student_id = student.student_id) INNER JOIN candidate_position ON candidate.position_id = candidate_position.position_id) ORDER BY candidate_position.heirarchy_id"); // get positions
-                        echo isValidCandidate($table, "5", 1); //
+                        // echo isValidCandidate($table, "5", 1); //
                         generateBallot($table);
                         require 'vtConfirm.php';
                         echo '</div>';
