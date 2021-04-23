@@ -19,7 +19,6 @@
 		require "connect.php";
 		require "vtValSan.php";
 	?>
-	</body>
 
 		<header id="F-header"  style="text-align: center;"><b>VOTE RECEIPT</b></header><br>
 
@@ -87,4 +86,5 @@
         	location.href = "/*Dashboard*/";
       		}
 		</script>
+</body>
 </html>
