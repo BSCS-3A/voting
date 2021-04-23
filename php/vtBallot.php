@@ -36,12 +36,15 @@
 
                     if(empty($sched)){
                         header("Location: ../html/no_election_scheduled.html");
+                        exit();
                     }
                     else if($access_time > $end_time){
                         header("Location: ../html/election_finished.html");
+                        exit();
                     }
                     else if($access_time < $start_time){
                         header("Location: ../html/election_not_yet_started.html");
+                        exit();
                     }
                     else if($access_time >= $start_time && $access_time <= $end_time){
                         include 'navstudent.php';
@@ -49,6 +52,7 @@
                         echo '<main>';
                         echo '<form id = "main-form" method="POST" action = "vtReceipt.php" class="vtBallot" id="vtBallot"><div id="voting-page">';
                         $table = $conn->query("SELECT * FROM ((candidate INNER JOIN student ON candidate.student_id = student.student_id) INNER JOIN candidate_position ON candidate.position_id = candidate_position.position_id) ORDER BY candidate_position.heirarchy_id"); // get positions
+                        echo isValidCandidate($table, "5", 1); //
                         generateBallot($table);
                         require 'vtConfirm.php';
                         echo '</div>';
@@ -59,12 +63,14 @@
                 }
                 else{ // Already Voted
                     header("Location: vtReceipt.php");
+                    exit();
                 }
             }
             else{ // Invalid user; destroy session and return to login
                 session_unset();    // remove all session variables
                 session_destroy();  // destroy session
                 header("Location: ../index.php");
+                exit();
             }
         ?>
      <br>
