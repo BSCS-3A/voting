@@ -5,9 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta charset="utf-8">
     <link rel="icon" href="../img/BUHS LOGO.png" type="image/png">
-    <link rel="stylesheet" href="../css/bootstrap.css">
+    <link rel="stylesheet" href="../css/student_css/bootstrap_vote.css">
+    <link rel="stylesheet" href="../css/student_css/font-awesome_vote.css">
+    <link rel="stylesheet" type="text/css" href="../css/student_css/vote-message.css">
+    <!-- <link rel="stylesheet" href="../css/bootstrap.css">
     <link rel="stylesheet" href="../css/font-awesome.css">
-    <link rel="stylesheet" type="text/css" href="../css/vote-message.css">
+    <link rel="stylesheet" type="text/css" href="../css/vote-message.css"> -->
     <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
     <title>Download receipt</title>
