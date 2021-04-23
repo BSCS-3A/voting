@@ -51,6 +51,11 @@
           echo '<div class="F-receipt-message">';
           echo "<h3>Your votes were submitted successfully! Here is a copy of your vote receipt</h3>";
           echo '</div></div>';
+          echo '<div id="receipt-page-buttons" class="F-receipt-page-buttons">
+					<button type="button" class="F-downloadReceiptBTN">Download Receipt</button>
+					<button type="button" class="F-goToHomeBTN">Go to Home</button>
+				</div>
+		</main>';
           
         }
       }
@@ -61,6 +66,11 @@
         echo '<div class="F-receipt-message">';
         echo "<h3>You have already voted. Here is a copy of your vote receipt.</h3>";
         echo '</div></div>';
+        echo '<div id="receipt-page-buttons" class="F-receipt-page-buttons">
+        <button type="button" class="F-downloadReceiptBTN">Download Receipt</button>
+        <button type="button" class="F-goToHomeBTN">Go to Home</button>
+      </div>
+		</main>';
       }
     }
     else{ // Invalid user; destroy session and return to login
@@ -70,14 +80,10 @@
       exit();
     }
   ?>
-          <div id="receipt-page-buttons" class="F-receipt-page-buttons">
-					<button type="button" class="F-downloadReceiptBTN">Download Receipt</button>
-					<button type="button" class="F-goToHomeBTN">Go to Home</button>
-				</div>
-		</main>
+          
   <script>
         // Get Download Receipt button
-        var download = document.getElementById("dl-receipt");
+        var download = document.getElementById("receipt-page-buttons");
 
         // Get Home button
         var home = document.getElementById("gt-home");
