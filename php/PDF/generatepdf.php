@@ -1,5 +1,6 @@
 <?php
 require '../connect.php';
+
 // require 'connect.php';
 // Include the main TCPDF library (search for installation path).
 require_once('TCPDF-main/tcpdf.php');
@@ -118,11 +119,22 @@ ob_start();
 		if(($voted["vote_allow"] == 0 && $_SESSION['grade_level'] == $voted["grade_level"]) || $voted["vote_allow"] == 1){
 			if($heir_id != $voted["heirarchy_id"]){
 				$heir_id = $voted["heirarchy_id"];
-				$candidate_name = $voted['fname'].' '.$voted['lname'];
-				
+				if($voted['status'] == "Voted"){
+					$candidate_name = $voted['fname'].' '.$voted['lname'];
+					$party_name = $voted['party_name'];
+				}
+				else if($voted['status'] == "Abstain"){
+					$candidate_name = "Abstain";
+					$party_name = "N/A";
+				}
+				else{
+					$candidate_name = "Invalid";
+					$party_name = "N/A";
+				}
+
 				$pdf->Cell(60,10,$voted['position_name'],1,0,'C');
 				$pdf->Cell(60,10,$candidate_name,1,0,'C',0);
-				$pdf->Cell(60,10,$voted['party_name'],1,0,'C',0);
+				$pdf->Cell(60,10,$party_name,1,0,'C',0);
 				$pdf->Cell(60,10,'',0,1); //spacer
 			}
 			$counter++;
