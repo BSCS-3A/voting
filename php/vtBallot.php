@@ -4,10 +4,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta charset="utf-8">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="icon" href="../img/BUHS LOGO.png" type="image/png">
-    <link rel="stylesheet" href="../css/bootstrap.css">
-    <link rel="stylesheet" href="../css/font-awesome.css">
-    <link rel="stylesheet" type="text/css" href="../css/vote.css">
+    <link rel="stylesheet" href="../css/student_css/bootstrap-vote.css">
+    <link rel="stylesheet" href="../css/student_css/font-awesome_vote.css">
+    <link rel="stylesheet" type="text/css" href="../css/student_css/bootstrap.min-vote.css">
+    <link rel="stylesheet" type="text/css" href="../css/student_css/bootstrap_vote.css">
+    <link rel="stylesheet" type="text/css" href="../css/student_css/vote-ballot.css">
     <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
     <script src="../js/scripts.js"></script>
@@ -49,10 +52,11 @@
                     }
                     else if($access_time >= $start_time && $access_time <= $end_time){
                         echo '<form id = "main-form" method="POST" action = "vtReceipt.php" class="vtBallot" id="vtBallot"><div id="voting-page">';
+                        $table = $conn->query("SELECT * FROM ((candidate INNER JOIN student ON candidate.student_id = student.student_id) INNER JOIN candidate_position ON candidate.position_id = candidate_position.position_id) ORDER BY candidate_position.heirarchy_id"); // get positions
                         generateBallot($table);
                         require 'vtConfirm.php';
                         echo '</div>';
-                        echo '<div id="vote-button"><button id="vote-btn" name = "vote-button" class="btn" type = "button">SUBMIT</button></div>
+                        echo '<div id="vote-button"><button id="vote-btn" name = "vote-button" class="vote-btn" type = "button">SUBMIT</button></div>
                         </form>';
                     }
                 }
