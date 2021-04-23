@@ -65,12 +65,11 @@
             				}
             			?>
         			</div>
-
-					<div id="receipt-page-buttons" class="F-receipt-page-buttons">
-						<button type="button" class="F-downloadReceiptBTN">Download Receipt</button>
-						<button type="button" class="F-goToHomeBTN">Go to Home</button>
-					</div>
 			</div>
+				<div id="receipt-page-buttons" class="F-receipt-page-buttons">
+					<button type="button" class="F-downloadReceiptBTN">Download Receipt</button>
+					<button type="button" class="F-goToHomeBTN">Go to Home</button>
+				</div>
 		</main>
 
 		<script>
