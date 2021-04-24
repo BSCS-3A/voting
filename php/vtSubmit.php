@@ -19,7 +19,8 @@
 				// $choice = $_POST[$poss['heirarchy_id']];
 			}
 			
-			// if(isValidCandidate($table, $choice, $poss['heirarchy_id'])){
+			$run_for = $poss['heirarchy_id'];
+			if(isValidCandidate($table, $choice, $run_for)){
 				if($poss['candidate_id'] == $choice){
 					$candidate = $poss['candidate_id'];
 					$conn->query("UPDATE candidate SET total_votes = total_votes + 1 WHERE candidate.candidate_id = $candidate");		
@@ -30,12 +31,13 @@
 					// echo "Abstain <br>";
 					$status = "Abstain";
 				}
-			// }
-			// else{
-			// 	// notify admin & return to ballot
-			// 	// echo "Ballot tampering detected";
-			// 	header("Location: vtBallot.php");
-			// }
+			}
+			else{
+				// notify admin & return to ballot
+				echo "Ballot tampering detected";
+				exit();
+				// header("Location: vtBallot.php");
+			}
 
 		}
 		else{
