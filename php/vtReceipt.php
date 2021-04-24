@@ -21,6 +21,9 @@
 		require "connect.php";
 		require "vtValSan.php";
 
+    // $table = $conn->query("SELECT * FROM ((candidate INNER JOIN student ON candidate.student_id = student.student_id) INNER JOIN candidate_position ON candidate.position_id = candidate_position.position_id) ORDER BY candidate_position.heirarchy_id"); // get positions
+    // echo isValidCandidate($table, 5, 1); //
+
     function receiptMsg($message){
       include 'navStudent.php';
       echo '<header id="F-header"  style="text-align: center;"><b>VOTE RECEIPT</b></header><br>';
