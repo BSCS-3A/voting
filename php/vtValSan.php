@@ -78,22 +78,31 @@
     function isValidCandidate($table, $ballot_cand_id, $ballot_heir_id){
         // checks if selection is valid candidate
         mysqli_data_seek($table, 0);
-        // if($ballot_cand_id == 0){
-        //     return true;
-        // }
-        // else{
+        if($ballot_cand_id == 0){
+            return true;
+            // return 1;
+        }
+        else{
             while($poss = $table->fetch_assoc()){
+                // echo $poss['candidate_id']." ".$poss['fname']; 
                 if($ballot_cand_id == $poss['candidate_id']){
+                    // echo "Matched";
                     if($poss['heirarchy_id'] == $ballot_heir_id){
                         return true;
+                        // return 1;
+                        // echo "Valid";
                     }
                     else{
                         return false;
+                        // return 2;
+                        // echo "Invalid";
                     }
                 }
+                // echo "<br>";
             }
             return false;
-        // }
+            // return 2;
+        }
     }
 
     function errorMessage($message){
@@ -119,7 +128,7 @@
         }
         </script>';
     }
-    
+
     function redirect($url){
         if (headers_sent()){
           die('<script type="text/javascript">window.location.replace("'.$url.'");</script‌​>');
