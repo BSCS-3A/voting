@@ -81,7 +81,7 @@
         var home = document.getElementById("gt-home");
 
         download.onclick = function() {
-        location.href = "PDF/generatepdf.php";
+        location.href = "PDF/generatepdf.php"; // generate reciept & show receipt
         }
 
         home.onclick = function() {
