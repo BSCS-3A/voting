@@ -1,17 +1,17 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html>
     <head>
-      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="viewport" content="width=device-width, initial-scale=1"> -->
       <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
       <!-- <link rel="stylesheet" type="text/css" href="../css/bootstrap.css"> -->
       <!-- <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css"> -->
       <!-- <link rel="stylesheet" type="text/css" href="../css/styles.css"> -->
       <!-- <script src="../js/bootstrap.js"></script>
       <script src="../js/bootstrap.min.js"></script> -->
-    </head>
+    <!-- </head>
 
   
-  <body>
+  <body> -->
   
     <!-- Trigger/Open The Modal -->
     <!-- <button id="vote-button">Submit</button> -->
@@ -62,5 +62,5 @@
         </div>
       </div>
     </div>
-  </body>
-</html>
+  <!-- </body>
+</html> -->
