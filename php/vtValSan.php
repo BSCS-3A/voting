@@ -34,7 +34,7 @@
 
      function isVoted($conn){
         // check if user has already voted
-        $stud_id = $_SESSION['student_id'];
+        $stud_id = $conn->real_escape_string($_SESSION['student_id']);
         $voter = $conn->query("SELECT * FROM student WHERE student_id = $stud_id");
         $student = $voter->fetch_assoc();
         // see if login already has voter info
@@ -47,7 +47,7 @@
     }
 
     function isValidUser($conn){  // checks if user is registered
-        $studd_id = $_SESSION['student_id'];
+        $studd_id = $conn->real_escape_string($_SESSION['student_id']);
         $voter = $conn->query("SELECT * FROM student WHERE student_id = $studd_id");
         $poss = $voter->fetch_assoc();
         // echo $studd_id;
