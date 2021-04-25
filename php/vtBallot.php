@@ -30,40 +30,43 @@
                     $sched_row = $conn->query("SELECT * FROM `vote_event` WHERE `vote_event_id` = 1");
                     $sched = $sched_row->fetch_assoc();
                     
-                    $start_time = strtotime($sched['start_date']);
-                    $end_time = strtotime($sched['end_date']);
-                    $access_time = time();
-
+                    
                     if(empty($sched)){
                         errorMessage("No election has been scheduled");
                         // header("Location: ../html/no_election_scheduled.html");
                         // exit();
                     }
-                    else if($access_time > $end_time){
-                        errorMessage("Election is already finished");
-                        // header("Location: ../html/election_finished.html");
-                        // exit();
-                    }
-                    else if($access_time < $start_time){
-                        errorMessage("Election has not yet started");
-                        // header("Location: ../html/election_not_yet_started.html");
-                        // exit();
-                    }
-                    else if($access_time >= $start_time && $access_time <= $end_time){
-                        include 'navstudent.php';
-                        echo '<header id="F-header"  style="text-align: center;"><b>STUDENT LEADER ELECTION</b></header><br>';
-                        echo '<main>';
-                        echo '<form id = "main-form" method="POST" action = "vtReceipt.php" class="vtBallot" id="vtBallot"><div id="voting-page">';
-                        $table = $conn->query("SELECT * FROM ((candidate INNER JOIN student ON candidate.student_id = student.student_id) INNER JOIN candidate_position ON candidate.position_id = candidate_position.position_id) ORDER BY candidate_position.heirarchy_id"); // get positions
-                        // echo isValidCandidate($table, "5", 1); //
-                        generateBallot($table);
-                        require 'vtConfirm.php';
-                        echo '</div>';
-                        echo '<div id="vote-button"><button id="vote-btn" name = "vote-button" class="vote-btn" type = "button">SUBMIT</button></div>
-                        </form>';
-                        echo '</main>';
-                        echo '<br>
-                        <script src = "../js/modals.js"></script>';
+                    else{
+                        $start_time = strtotime($sched['start_date']);
+                        $end_time = strtotime($sched['end_date']);
+                        $access_time = time();
+                        
+                        if($access_time > $end_time){
+                            errorMessage("Election is already finished");
+                            // header("Location: ../html/election_finished.html");
+                            // exit();
+                        }
+                        else if($access_time < $start_time){
+                            errorMessage("Election has not yet started");
+                            // header("Location: ../html/election_not_yet_started.html");
+                            // exit();
+                        }
+                        else if($access_time >= $start_time && $access_time <= $end_time){
+                            include 'navstudent.php';
+                            echo '<header id="F-header"  style="text-align: center;"><b>STUDENT LEADER ELECTION</b></header><br>';
+                            echo '<main>';
+                            echo '<form id = "main-form" method="POST" action = "vtReceipt.php" class="vtBallot" id="vtBallot"><div id="voting-page">';
+                            $table = $conn->query("SELECT * FROM ((candidate INNER JOIN student ON candidate.student_id = student.student_id) INNER JOIN candidate_position ON candidate.position_id = candidate_position.position_id) ORDER BY candidate_position.heirarchy_id"); // get positions
+                            // echo isValidCandidate($table, "5", 1); //
+                            generateBallot($table);
+                            require 'vtConfirm.php';
+                            echo '</div>';
+                            echo '<div id="vote-button"><button id="vote-btn" name = "vote-button" class="vote-btn" type = "button">SUBMIT</button></div>
+                            </form>';
+                            echo '</main>';
+                            echo '<br>
+                            <script src = "../js/modals.js"></script>';
+                        }
                     }
                 }
                 else{ // Already Voted

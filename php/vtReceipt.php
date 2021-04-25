@@ -43,23 +43,26 @@
         $sched_row = $conn->query("SELECT * FROM `vote_event` WHERE `vote_event_id` = 1");
         $sched = $sched_row->fetch_assoc();
 
-        $start_time = strtotime($sched['start_date']);
-        $end_time = strtotime($sched['end_date']);
-        $access_time = time();
-
+        
         if(empty($sched)){
           errorMessage("No election has been scheduled");
         }
-        else if($access_time > $end_time){
-            errorMessage("Election is already finished");
-        }
-        else if($access_time < $start_time){
-            errorMessage("Election has not yet started");
-        }
-        else if($access_time >= $start_time && $access_time <= $end_time){
-          require "vtSubmit.php";
-          receiptMsg("Your votes were submitted successfully! Here is a copy of your vote receipt");
-        }
+        else{
+          $start_time = strtotime($sched['start_date']);
+          $end_time = strtotime($sched['end_date']);
+          $access_time = time();
+
+          if($access_time > $end_time){
+              errorMessage("Election is already finished");
+          }
+          else if($access_time < $start_time){
+              errorMessage("Election has not yet started");
+          }
+          else if($access_time >= $start_time && $access_time <= $end_time){
+            require "vtSubmit.php";
+            receiptMsg("Your votes were submitted successfully! Here is a copy of your vote receipt");
+          }
+        } 
       }
       else{ // Already Voted
         receiptMsg("You have already voted. Here is a copy of your vote receipt.");
