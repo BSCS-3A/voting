@@ -4,9 +4,17 @@
     $dbuser = "id16218880_webhostingbscs3a";
     $dbpass = "t9%~bjqmK)uHAwe[";
     $db = "id16218880_buceils";
-    $conn = mysqli_connect($dbhost, $dbuser, $dbpass,$db);
-    if ($conn->connect_error) {
-        die("Connection to database failed: ". $conn->connect_error);
+    // Proceduaral connection
+    // $conn = mysqli_connect($dbhost, $dbuser, $dbpass,$db);
+    // if ($conn->connect_error) {
+    //     die("Connection to database failed: ". $conn->connect_error);
+    // }
+
+    // OOP COnnection
+    $conn = new mysqli($dbhost, $dbuser, $dbpass,$db);
+    if ($conn -> connect_errno) {
+        echo "Failed to connect to MySQL: " . $conn -> connect_error;
+        exit();
     }
     // Remove this section when inserting into mainline
     session_start();
