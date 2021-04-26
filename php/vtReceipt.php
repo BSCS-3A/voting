@@ -7,7 +7,7 @@
     <link rel="icon" href="../img/BUHS LOGO.png" type="image/png">
     <link rel="stylesheet" href="../css/student_css/bootstrap_vote.css">
     <link rel="stylesheet" href="../css/student_css/font-awesome_vote.css">
-    <link rel="stylesheet" type="text/css" href="../css/student_css/vote-message.css">
+    <link rel="stylesheet" type="text/css" href="../css/student_css/vote_message.css">
     <!-- <link rel="stylesheet" href="../css/bootstrap.css">
     <link rel="stylesheet" href="../css/font-awesome.css">
     <link rel="stylesheet" type="text/css" href="../css/vote-message.css"> -->
@@ -34,10 +34,10 @@
         echo "<h3>".$message."</h3>";
         echo '</div></div>';
         echo '<div id="receipt-page-buttons" class="F-receipt-page-buttons">
-        <button type="button" class="F-downloadReceiptBTN">Download Receipt</button>
-        <button type="button" class="F-goToHomeBTN">Go to Home</button>
+        <button type="button" class="F-downloadReceiptBTN" id="F-downloadReceiptBTN">Download Receipt</button>
+        <button type="button" class="F-goToHomeBTN" id="F-goToHomeBTN">Go to Home</button>
       </div>
-		</main>';
+    </main>';
     }
     if(isValidUser($conn)){
       if(!isVoted($conn)){
@@ -80,17 +80,17 @@
           <!-- <embed src="PDF/generatepdf.php" width="600px" height="800px" /> -->
   <script>
         // Get Download Receipt button
-        var download = document.getElementById("receipt-page-buttons");
-
+        var download = document.getElementById("F-downloadReceiptBTN");
+    
         // Get Home button
-        var home = document.getElementById("gt-home");
+        var home = document.getElementById("F-goToHomeBTN");
 
         download.onclick = function() {
         location.href = "PDF/generatepdf.php"; // generate reciept & show receipt
         }
 
         home.onclick = function() {
-        location.href = "/*Dashboard*/";
+          location.href = "StudentDashboard.php";
         }
   </script>
 </body>

@@ -152,6 +152,4 @@
             file_put_contents($file, $text_message, FILE_APPEND | LOCK_EX);
         }
     }
-
-
 ?>
