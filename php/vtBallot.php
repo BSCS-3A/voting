@@ -75,6 +75,7 @@
                 }
             }
             else{ // Invalid user; destroy session and return to login
+                notifyAdmin("Warning: A user with invalid credentials attmpted to access the Voting Page");
                 session_unset();    // remove all session variables
                 session_destroy();  // destroy session
                 header("Location: ../index.php");

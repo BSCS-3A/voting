@@ -14,25 +14,15 @@
 </head>
 
 <body>
-    <?php
-        include 'html/navbar.html';
-    ?>
-
-    <header id="F-header" style="text-align:center"><b>STUDENT LEADER ELECTION</b></header><br>
 
     <main>
-        <!--Candidates-->
         <div id="voting-page">
+               <a href = "php/vtBallot.php">
                Index
+               </a>
               
         </div>
      </main>
-
-    <footer>
-        <div class="footer">
-        <p>BS COMPUTER SCIENCE 3A © 2021</p>
-        </div>
-    </footer>
   
    
 </body>

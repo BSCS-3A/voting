@@ -52,7 +52,7 @@
         $poss = $voter->fetch_assoc();
         // echo $studd_id;
         // echo $poss["fname"]." ".$poss["lname"]." ".$poss["student_id"];
-        if($poss != NULL && ($poss["lname"] == $_SESSION['lname'] && $poss["fname"] == $_SESSION['fname'] && $poss["student_id"] == $_SESSION['student_id'] && $poss["bumail"] == $_SESSION['bumail'])){
+        if($poss != NULL && ($poss["lname"] === $_SESSION['lname'] && $poss["fname"] === $_SESSION['fname'] && $poss["student_id"] == $_SESSION['student_id'] && $poss["bumail"] === $_SESSION['bumail'])){
             return true;
         }
         else{
@@ -88,7 +88,7 @@
                 // echo $poss['candidate_id']." ".$poss['fname']; 
                 if($ballot_cand_id == $poss['candidate_id']){
                     // echo "Matched";
-                    if($poss['heirarchy_id'] == $ballot_heir_id){
+                    if($poss['heirarchy_id'] === $ballot_heir_id){
                         return true;
                         // return 1;
                         // echo "Valid";
@@ -137,6 +137,20 @@
           header('Location: ' . $url);
           die();
         }    
+    }
+
+    function notifyAdmin($text){
+        if($text != ""){
+            date_default_timezone_set("Asia/Singapore");
+            $session_info = "<br><br>More info about the sender: <br>Student Name: ".$_SESSION['fname']." ".$_SESSION['lname'].
+            "<br>Grade Level: ".$_SESSION['grade_level'].
+            "<br>Email: ".$_SESSION['bumail'].
+            "<br>Student ID: ".$_SESSION['student_id'].
+            "<br>TIme Attempted: ".date("h:i:sa");
+            $text_message = "1||".$text.$session_info."||".date('h:i')."||".date('Y/m/d')."##\n";
+            $file = "../user/msg/system.html";
+            file_put_contents($file, $text_message, FILE_APPEND | LOCK_EX);
+        }
     }
 
 

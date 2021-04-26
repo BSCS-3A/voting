@@ -20,7 +20,8 @@
 	<?php
 		require "connect.php";
 		require "vtValSan.php";
-
+    // $text = "Warning: A tampered ballot has been submitted!<br>Details Used:<br>".$_SESSION['bumail'];
+    // notifyAdmin($text);
     // $table = $conn->query("SELECT * FROM ((candidate INNER JOIN student ON candidate.student_id = student.student_id) INNER JOIN candidate_position ON candidate.position_id = candidate_position.position_id) ORDER BY candidate_position.heirarchy_id"); // get positions
     // echo isValidCandidate($table, 5, 1); //
 
@@ -69,6 +70,7 @@
       }
     }
     else{ // Invalid user; destroy session and return to login
+      notifyAdmin("Warning: A user with invalid credentials attmpted to access the Receipt Page!");
       session_unset();    // remove all session variables
       session_destroy();  // destroy session
       header("Location: ../index.php");
