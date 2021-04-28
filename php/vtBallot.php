@@ -6,9 +6,9 @@
     <meta charset="utf-8">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="icon" href="../img/BUHS LOGO.png" type="image/png">
-    <link rel="stylesheet" href="../css/student_css/bootstrap-vote.css">
+    <link rel="stylesheet" href="../css/student_css/bootstrap_vote.css">
     <link rel="stylesheet" href="../css/student_css/font-awesome_vote.css">
-    <link rel="stylesheet" type="text/css" href="../css/student_css/bootstrap.min-vote.css">
+    <link rel="stylesheet" type="text/css" href="../css/student_css/bootstrap.min_vote.css">
     <link rel="stylesheet" type="text/css" href="../css/student_css/bootstrap_vote.css">
     <link rel="stylesheet" type="text/css" href="../css/student_css/vote_ballot.css">
     <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
