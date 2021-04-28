@@ -86,7 +86,7 @@
         var home = document.getElementById("F-goToHomeBTN");
 
         download.onclick = function() {
-        location.href = "PDF/generatepdf.php"; // generate reciept & show receipt
+        location.href = "../other/PDF_Generator/generatepdf.php"; // generate reciept & show receipt
         }
 
         home.onclick = function() {

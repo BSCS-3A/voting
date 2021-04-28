@@ -1,5 +1,5 @@
 <?php
-require '../connect.php';
+require '../../php/connect.php';
 
 // require 'connect.php';
 // Include the main TCPDF library (search for installation path).
