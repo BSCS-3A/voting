@@ -107,7 +107,7 @@
     }
 
     function errorMessage($message){
-        echo '<link rel="stylesheet" type="text/css" href="../css/student_css/vote-message.css">';
+        echo '<link rel="stylesheet" type="text/css" href="../css/student_css/vote_message.css">';
         include 'navStudent.php';
         echo '<main>
 			<div id="error-message-container" class="error-message-container">			
