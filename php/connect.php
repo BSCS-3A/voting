@@ -1,5 +1,5 @@
 <?php
-
+    date_default_timezone_set('Asia/Manila');
     $dbhost = "localhost";
     $dbuser = "id16218880_webhostingbscs3a";
     $dbpass = "t9%~bjqmK)uHAwe[";
@@ -11,9 +11,11 @@
     // }
 
     // OOP COnnection
-    $conn = new mysqli($dbhost, $dbuser, $dbpass,$db);
+    @$conn = new mysqli($dbhost, $dbuser, $dbpass,$db);
     if ($conn -> connect_errno) {
-        echo "Failed to connect to MySQL: " . $conn -> connect_error;
+        // echo "Failed to connect to MySQL: " . $conn -> connect_error;
+        require 'vtValSan.php';
+        errorMessage("There seems to be an error. <br> It's not you, it's us. We're trying our best to make this work. ");
         exit();
     }
     // Remove this section when inserting into mainline

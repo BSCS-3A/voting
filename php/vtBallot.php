@@ -39,9 +39,18 @@
                     $end_time = strtotime($sched['end_date']);
                     $access_time = time();
                     
-                    echo "Start: ".(date("Y-m-d h:m:sa", $start_time))."<br>";
-                    echo "End: ".(date("Y-m-d h:m:sa", $end_time))."<br>";
-                    echo "Now: ".(date("Y-m-d h:m:sa", $access_time))."<br>";
+                    echo "<h6>Start:________".(date("Y-m-d h:m:sa", $start_time))."<br></h6>";
+                    echo "<h6>Ends:________".(date("Y-m-d h:m:sa", $end_time))."<br></h6>";
+                    echo "<h6>Opened:_____".(date("Y-m-d h:m:sa", $access_time))."<br></h6>";
+                    echo '<h6 id = "timer">Now</h6>';
+                    echo '<script>
+                    var myVar = setInterval(myTimer, 1000);
+                    function myTimer() {
+                        var d = new Date();
+                        var t = d.toLocaleTimeString();
+                        document.getElementById("timer").innerHTML = "Now:____"+d;
+                    }
+                    </script>';
                     
                     if($access_time > $end_time){
                         errorMessage("Election is already finished");
