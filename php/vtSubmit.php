@@ -48,7 +48,7 @@
 			}
 		}
 		else{
-			$status = " Abstain";
+			$status = "Abstain";
 		}
 		$vote_table[$poss['candidate_id']] = $status;
 	}
