@@ -1,5 +1,5 @@
 <?php
-require 'connect.php';
+require '../../php/connect.php';
 // Remove this temp session
 // session_start();
 // $_SESSION['bumail'] = "dhanjaphetverastigue.ador@bicol-u.edu.ph";
@@ -10,7 +10,7 @@ require 'connect.php';
 // $_SESSION['timestamp']=time();
 
 // Include the main TCPDF library (search for installation path).
-require_once('../other/TCPDF-main/tcpdf.php');
+require_once('TCPDF-main/tcpdf.php');
 
 class PDF extends TCPDF {
 	public function Header(){

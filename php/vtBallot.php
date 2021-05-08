@@ -71,7 +71,7 @@
                         $table = $conn->query("SELECT * FROM ((candidate INNER JOIN student ON candidate.student_id = student.student_id) INNER JOIN candidate_position ON candidate.position_id = candidate_position.position_id) ORDER BY candidate_position.heirarchy_id"); // get positions
                         // echo isValidCandidate($table, "5", 1); //
 
-                        generateBallot($table, $conn);
+                        generateBallot($table);
                         require 'vtConfirm.php';
                         echo '</div>';
                         echo '<div id="vote-button"><button id="vote-btn" name = "vote-button" class="vote-btn" type = "button">SUBMIT</button></div>

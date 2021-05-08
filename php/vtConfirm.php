@@ -25,7 +25,7 @@
         </div>
         <div class="F-modal-body">
             <div class="F-show-votes">
-                <p>Voter: <a href="#" id="VoterName"><?php echo $conn->real_escape_string($_SESSION['fname']).' '. $conn->real_escape_string($_SESSION['lname'])?></a></p>
+                <p>Voter: <a href="#" id="VoterName"><?php echo $_SESSION['fname'].' '. $_SESSION['lname']?></a></p>
                 <div class="display-votes">
                   <?php
                     mysqli_data_seek($table, 0);
@@ -40,8 +40,8 @@
                                 // echo position
                                 echo 
                                 '<tr id="display-vote-info">
-                                  <td id="F-preview-Position">'.$conn->real_escape_string($poss["position_name"]).':</td>
-                                  <td id="F-preview-CandidateName"><span id = "'.$conn->real_escape_string($poss["heirarchy_id"]).'">Abstain</span></td>
+                                  <td id="F-preview-Position">'.$poss["position_name"].':</td>
+                                  <td id="F-preview-CandidateName"><span id = "'.$poss["heirarchy_id"].'">Abstain</span></td>
                                 </tr>
                                 <br>';
                             // end of position div 

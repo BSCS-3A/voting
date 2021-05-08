@@ -25,13 +25,13 @@
     // $table = $conn->query("SELECT * FROM ((candidate INNER JOIN student ON candidate.student_id = student.student_id) INNER JOIN candidate_position ON candidate.position_id = candidate_position.position_id) ORDER BY candidate_position.heirarchy_id"); // get positions
     // echo isValidCandidate($table, 5, 1); //
 
-    function receiptMsg($message, $conn){
+    function receiptMsg($message){
       include 'navStudent.php';
       echo '<header id="F-header"  style="text-align: center;"><b>VOTE RECEIPT</b></header><br>';
         echo '<main>';
         echo '<div id="download-receipt-page" class="F-download-receipt-container">';
         echo '<div class="F-receipt-message">';
-        echo "<h3>".$conn->real_escape_string($message)."</h3>";
+        echo "<h3>".$message."</h3>";
         echo '</div></div>';
         echo '<div id="receipt-page-buttons" class="F-receipt-page-buttons">
         <button type="button" class="F-downloadReceiptBTN" id="F-downloadReceiptBTN">Download Receipt</button>
@@ -61,12 +61,12 @@
           }
           else if($access_time >= $start_time && $access_time <= $end_time){
             require "vtSubmit.php";
-            receiptMsg("Your votes were submitted successfully! Here is a copy of your vote receipt", $conn);
+            receiptMsg("Your votes were submitted successfully! Here is a copy of your vote receipt");
           }
         } 
       }
       else{ // Already Voted
-        receiptMsg("You have already voted. Here is a copy of your vote receipt.", $conn);
+        receiptMsg("You have already voted. Here is a copy of your vote receipt.");
       }
     }
     else{ // Invalid user; destroy session and return to login
